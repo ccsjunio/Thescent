@@ -1,0 +1,1 @@
+start "" msbuild BellEngine.sln /p:Configuration=Release /p:Platform=x64
