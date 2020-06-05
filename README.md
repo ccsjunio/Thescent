@@ -5,10 +5,12 @@ This illustrates a complex use case of C/C++ in a game engine (BellEngine).
 The engine also supports Lua for scripted animations and the game itself is packaged in a installer written in Wix.
 More information is available in the documentation folder. 
 
+Official game page: https://fe-bell.itch.io/thescent
+
 Developer: Felipe Da Silva Bellini
 
 # A - PLAYING THE GAME:
-1.	An installer is available at this repository, at FOL and at Itch.io.
+1.	An installer is available [here](https://fe-bell.itch.io/thescent).
 2.	Install the game. Since the installer is not signed, some antivirus programs might block it.
 	If that is the case, just disable the antivirus and try again.
 3.	Launch Thescent from the shortcut created on your desktop.
