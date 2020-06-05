@@ -8,7 +8,7 @@ More information is available in the documentation folder.
 This project features the following topics:
 * Multithreading
 * ECS Game Engine
-* Development patterns like Object pooling, Singleton, Factories, Inheritance, etc.
+* Development patterns such as Object pooling, Singleton, Factories, Inheritance, etc.
 * C++11, 14 and 17
 * OpenGL 3D graphics
 * More features as provided in the documentation.
