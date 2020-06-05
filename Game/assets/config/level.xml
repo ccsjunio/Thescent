@@ -1,0 +1,3462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="FirstLevel">	
+	<FrameBuffers>
+		<FrameBuffer Name="MainSceneFramebuffer" Type="fbo">
+			<Parent>Scene0</Parent>
+			<Target>SceneFBO1</Target>	
+			<ShaderPasses>
+				<Parameters>
+					<PassCount Type="int">2</PassCount>
+					<Pass0 Type="int">1</Pass0>
+					<Pass1 Type="int">4</Pass1>
+					<Pass1State Type="bool">0</Pass1State>
+				</Parameters>
+			</ShaderPasses>		
+		</FrameBuffer>	
+	</FrameBuffers>
+	<Scenes>	
+		<Scene Name="Scene0" UsingCustomFBO="0">
+			<Camera Name="FixedCamera" Type="CameraFree">
+				<EyePosition X="0.000000" Y="0.0" Z="10"/>
+				<FOV>60.000000</FOV>
+				<FarClippingPlane>1000.0</FarClippingPlane>
+				<NearClippingPlane>0.1</NearClippingPlane>
+				<Up X="0" Y="1" Z="0"/>		
+				<Target X="0" Y="0" Z="0"/>		
+			</Camera>
+			<World>
+				<Gravity X="0.0" Y="0.0" Z="0.0"/>
+				<AirFriction>0.99</AirFriction>
+			</World>
+			<FrameBuffers DrawToZero="1">
+
+			</FrameBuffers>
+			<Animations>
+				
+			</Animations>	
+			<Sounds>
+			</Sounds>
+			<Lights>
+				<Light Name="DescentLight" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="0" Z="10"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="0.000000" Z="1.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.2</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+			</Lights>
+			<GameObjects>			
+				<GameObject Name="SceneFBO1" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_20x15.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">90.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+				<GameObject Name="DescentCrosshairQuad" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_20x15.ply</MeshFile>
+									<TexturesPath Type="string">DescentCockpitCrosshair</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 0.05</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">-90.0 180.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">0.5 0.5 0.5</Scale>
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 0.5</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">1</TRANSPARENCY>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+				<GameObject Name="DescentCockpitQuad" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_20x15.ply</MeshFile>
+									<TexturesPath Type="string">DescentCockpit</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 0.1</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">-90.0 180.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">0.8 0.8 0.8</Scale>
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 0.00001</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">1</TRANSPARENCY>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+			</GameObjects>
+		</Scene>
+	
+		<Scene Name="Scene1" UsingCustomFBO="1">
+			<Camera Name="Scene1Camera" Type="CameraLockedAt">
+				<EyePosition X="0.000000" Y="0.0" Z="0.0"/>
+				<FOV>60.000000</FOV>
+				<FarClippingPlane>10000.0</FarClippingPlane>
+				<NearClippingPlane>0.1</NearClippingPlane>
+				<Target>PLAYER_COLLISIONSPHERE</Target>			
+			</Camera>
+			<World>
+				<Gravity X="0.0" Y="0.0" Z="0.0"/>
+				<AirFriction>0.99</AirFriction>
+			</World>
+			<Animations>
+				<!-- Put animations here -->
+				<Animation Name="OpenDoor1" AnimationType="parallel" AnimationTrigger="immediate" Type="LuaScriptedAnimation">
+					<IsActive>0</IsActive>
+					<Delay>0</Delay>
+					<Scripts>
+						<Script Path="OpenDoor.lua" Type="LuaScript">
+							<Parameters>					
+								<START_TIME Type="float">0</START_TIME>
+								<SCENE_NAME Type="string">Scene1</SCENE_NAME>
+								<ENTITY_NAME Type="string">DOOR_01</ENTITY_NAME>
+								<TARGET_POSITION_X Type="float">-70.0</TARGET_POSITION_X>
+								<TARGET_POSITION_Y Type="float">30.0</TARGET_POSITION_Y>
+								<TARGET_POSITION_Z Type="float">-100.0</TARGET_POSITION_Z>
+								<TOP_SPEED Type="float">3.0</TOP_SPEED>
+								<MAX_DISTANCE_TOPMOVEMENT Type="float">5.0</MAX_DISTANCE_TOPMOVEMENT>
+								<MIN_DISTANCE_NOMOVEMENT Type="float">1.0</MIN_DISTANCE_NOMOVEMENT>
+							</Parameters>			
+						</Script>
+					</Scripts>
+				</Animation>
+				<Animation Name="OpenDoor2" AnimationType="parallel" AnimationTrigger="immediate" Type="LuaScriptedAnimation">
+					<IsActive>0</IsActive>
+					<Delay>0</Delay>
+					<Scripts>
+						<Script Path="OpenDoor.lua" Type="LuaScript">
+							<Parameters>					
+								<START_TIME Type="float">0</START_TIME>
+								<SCENE_NAME Type="string">Scene1</SCENE_NAME>
+								<ENTITY_NAME Type="string">DOOR_02</ENTITY_NAME>
+								<TARGET_POSITION_X Type="float">70.0</TARGET_POSITION_X>
+								<TARGET_POSITION_Y Type="float">30.0</TARGET_POSITION_Y>
+								<TARGET_POSITION_Z Type="float">-100.0</TARGET_POSITION_Z>
+								<TOP_SPEED Type="float">3.0</TOP_SPEED>
+								<MAX_DISTANCE_TOPMOVEMENT Type="float">5.0</MAX_DISTANCE_TOPMOVEMENT>
+								<MIN_DISTANCE_NOMOVEMENT Type="float">1.0</MIN_DISTANCE_NOMOVEMENT>
+							</Parameters>			
+						</Script>
+					</Scripts>
+				</Animation>
+				<Animation Name="OpenDoorBars" AnimationType="parallel" AnimationTrigger="immediate" Type="LuaScriptedAnimation">
+					<IsActive>0</IsActive>
+					<Delay>0</Delay>
+					<Scripts>
+						<Script Path="OpenDoor.lua" Type="LuaScript">
+							<Parameters>					
+								<START_TIME Type="float">0</START_TIME>
+								<SCENE_NAME Type="string">Scene1</SCENE_NAME>
+								<ENTITY_NAME Type="string">DOOR_BARS</ENTITY_NAME>
+								<TARGET_POSITION_X Type="float">0.0</TARGET_POSITION_X>
+								<TARGET_POSITION_Y Type="float">30.0</TARGET_POSITION_Y>
+								<TARGET_POSITION_Z Type="float">-210.0</TARGET_POSITION_Z>
+								<TOP_SPEED Type="float">3.0</TOP_SPEED>
+								<MAX_DISTANCE_TOPMOVEMENT Type="float">5.0</MAX_DISTANCE_TOPMOVEMENT>
+								<MIN_DISTANCE_NOMOVEMENT Type="float">1.0</MIN_DISTANCE_NOMOVEMENT>
+							</Parameters>			
+						</Script>
+					</Scripts>
+				</Animation>
+				<Animation Name="BlowEntry" AnimationType="parallel" AnimationTrigger="immediate" Type="LuaScriptedAnimation">
+					<IsActive>0</IsActive>
+					<Delay>4</Delay>
+					<Scripts>
+						<Script Path="OpenDoor.lua" Type="LuaScript">
+							<Parameters>					
+								<START_TIME Type="float">0</START_TIME>
+								<SCENE_NAME Type="string">Scene1</SCENE_NAME>
+								<ENTITY_NAME Type="string">DOOR_ENTRY</ENTITY_NAME>
+								<TARGET_POSITION_X Type="float">0.0</TARGET_POSITION_X>
+								<TARGET_POSITION_Y Type="float">10.0</TARGET_POSITION_Y>
+								<TARGET_POSITION_Z Type="float">3000.0</TARGET_POSITION_Z>
+								<TOP_SPEED Type="float">30</TOP_SPEED>
+								<MAX_DISTANCE_TOPMOVEMENT Type="float">5.0</MAX_DISTANCE_TOPMOVEMENT>
+								<MIN_DISTANCE_NOMOVEMENT Type="float">1.0</MIN_DISTANCE_NOMOVEMENT>
+							</Parameters>			
+						</Script>
+					</Scripts>
+				</Animation>
+				<Animation Name="ThescentEscape" AnimationType="parallel" AnimationTrigger="immediate" Type="LuaScriptedAnimation">
+					<IsActive>0</IsActive>
+					<Delay>0</Delay>
+					<Scripts>
+						<Script Path="ApplyForce.lua" Type="LuaScript">
+							<Parameters>					
+								<START_TIME Type="float">0</START_TIME>
+								<SCENE_NAME Type="string">Scene1</SCENE_NAME>
+								<ENTITY_NAME Type="string">THESCENT_SHIP</ENTITY_NAME>
+								<FORCE Type="string">0.0 0.0 8000.0</FORCE>								
+							</Parameters>			
+						</Script>
+					</Scripts>
+				</Animation>
+			</Animations>	
+			<Sounds>
+				<!-- Put sounds here -->				
+			</Sounds>
+			<FrameBuffers>
+				<FrameBufferName>MainSceneFramebuffer</FrameBufferName>
+			</FrameBuffers>
+			<Lights>
+				<Light Name="L1" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="10" Z="33"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.05</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+				<Light Name="L2" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="10" Z="66"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.05</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+				<Light Name="L3" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="10" Z="75"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.05</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+								
+				<Light Name="LRA" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="-180" Y="10" Z="-100"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.03</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+				<Light Name="LRB" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="180" Y="10" Z="-100"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.03</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>				
+				
+				<Light Name="L8" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="10" Z="-60"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.03</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+				<Light Name="L9" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="10" Z="-160"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.03</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>
+				<Light Name="L10" Type="LightPoint">
+					<IsVisible>1</IsVisible>
+					<Position X="0" Y="10" Z="-260"/>
+					<Diffuse R="1.000000" G="1.000000" B="1.000000" A="1.000000"/>
+					<Specular R="1.000000" G="1.000000" B="1.000000" W="1000.000000"/>
+					<Direction X="0.000000" Y="-1.000000" Z="0.000000"/>
+					<ConstAttenuation>0.000000</ConstAttenuation>
+					<LinearAttenuation>0.03</LinearAttenuation>
+					<QuadraticAttenuation>0.00000</QuadraticAttenuation>
+					<InnerAngle>3.000000</InnerAngle>
+					<OuterAngle>15.000000</OuterAngle>
+					<DistanceCutOff>1000000.000000</DistanceCutOff>
+				</Light>	
+			</Lights>
+			<GameObjects>
+				<GameObject Name="SCENE_ENTITY" Type="GameObject">
+					<Components>
+						<MeshComponents>
+						
+						</MeshComponents>
+						<PhysicsComponents>
+						
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							
+						</RenderComponents>	
+						<AIBehaviors>
+							
+						</AIBehaviors>	
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">EnemyExplosion</Name>
+									<Path Type="string">enemyexplosion1.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>			
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">HatchOpen</Name>
+									<Path Type="string">Hatch.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>		
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">Denied</Name>
+									<Path Type="string">Denied.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>	
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">Anticloak</Name>
+									<Path Type="string">Anticloak.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">1</SourceType>
+								</Parameters>
+							</SoundComponent>	
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WTWCannon</Name>
+									<Path Type="string">WTWCannon.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">1</SourceType>
+								</Parameters>
+							</SoundComponent>	
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">ThemeSong</Name>
+									<Path Type="string">DavidHilowitzParalyticInsomniaTense.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">2</SourceType>
+									<FlagCount Type="unsigned int">1</FlagCount>
+									<Flag0 Type="unsigned long long">0x01</Flag0>
+								</Parameters>
+							</SoundComponent>												
+						</SoundComponents>							
+					</Components>
+				</GameObject>	
+			
+				<GameObject Name="SKYBOX_FRIEND" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">DebugSphere_small.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">10.0 -1 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.1 1.1 1.1</Scale>			
+									<Mass Type="float">2.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>	
+						<AIBehaviors>
+							<AIBehavior Type="pathfollowing">
+								<Parameters>
+									<Name Type="string">PathFollowing1</Name>
+									<IsActive Type="bool">1</IsActive>
+									<Loop Type="bool">1</Loop>
+									<NodeRadius Type="float">5.0</NodeRadius>
+									<NodeCount Type="unsigned int">12</NodeCount>						
+									<Node0 Type="Vector3D">10.0 -1 0.0</Node0>
+									<Node1 Type="Vector3D">8.66 -1 5.0</Node1>
+									<Node2 Type="Vector3D">4.99 -1 8.66</Node2>
+									<Node3 Type="Vector3D">0.00000047 -1 10.0</Node3>	
+									<Node4 Type="Vector3D">-5.0 -1 8.66</Node4>									
+									<Node5 Type="Vector3D">-8.66 -1 5</Node5>
+									<Node6 Type="Vector3D">-10 -1 0.000000874</Node6>
+									<Node7 Type="Vector3D">-8.66 -1 -5</Node7>
+									<Node8 Type="Vector3D">-4.99 -1 -8.66</Node8>				
+									<Node9 Type="Vector3D">0.00000047 -1 -10</Node9>
+									<Node10 Type="Vector3D">4.99 -1 -8.66</Node10>	
+									<Node11 Type="Vector3D">8.66 -1 -5</Node11>
+									<TopSpeed Type="float">1</TopSpeed>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>						
+					</Components>
+				</GameObject>	
+				<GameObject Name="Skybox" Type="Skybox">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">DebugSphere_small.ply</MeshFile>
+									<TextureType Type="unsigned int">1</TextureType>
+									<TexturesPath Type="string">skybox3</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Type Type="string">Rigidbody</Type>
+									<Position Type="Vector3D">0.0 0.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">3000.0 3000.0 3000.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.0</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">1.0</radius>
+									<center Type="Vector3D">0 0 0</center>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.0 1.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE_SKYBOX" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>	
+						<AIBehaviors>
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Name Type="string">SkyboxRotationAI</Name>
+									<IsActive Type="bool">1</IsActive>
+									<Target Type="Entity">SKYBOX_FRIEND</Target>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>
+					</Components>
+				</GameObject>					
+			
+				<GameObject Name="THESCENT_SHIP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">CubeMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">pyro.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10 120.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 180.0 0.0</Rotation>				
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">8.0 8.0 8.0</Scale>			
+									<Mass Type="float">2.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+							<LightComponents>
+								<LightComponent Type="LightPoint">
+									<Parameters>
+										<IsVisible Type="bool">1</IsVisible>
+										<Position Type="Vector3D">0 0 0</Position>
+										<DiffuseColor Type="Vector4D">0.92 0.52 0.20 1.0</DiffuseColor>
+										<SpecularColor Type="Vector4D">1.0 1.0 1.0 1000.0</SpecularColor>
+										<ConstAttenuation Type="float">0.000000</ConstAttenuation>
+										<LinearAttenuation Type="float">0.05</LinearAttenuation>
+										<QuadraticAttenuation Type="float">0.00000</QuadraticAttenuation>									
+										<DistanceCutOff Type="float">10</DistanceCutOff>
+									</Parameters>
+								</LightComponent>
+							</LightComponents>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment">
+										<COLOR_DIFFUSE Type="Vector4D">0.5 0.5 0.5 1.0</COLOR_DIFFUSE>
+										<COLOR_SPECULAR Type="Vector4D">0.0 0.0 0.0 1000.0</COLOR_SPECULAR>
+									</ShaderFeature>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+					</Components>
+				</GameObject>		
+			
+				<GameObject Name="REACTOR" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">CapsuleMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">Capsule.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+							<MeshComponent Type="ParticleMeshComponent">
+								<Parameters>								
+									<Name Type="string">ParticleMesh</Name>
+									<MeshFile Type="string">imposter.ply</MeshFile>
+									<TexturesPath Type="string">reactorimposter</TexturesPath>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 -260.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">20.0 20.0 20.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Capsule</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.25</radius>
+									<start Type="Vector3D">0 0.25 0</start>
+									<end Type="Vector3D">0 0.75 0</end>
+									<!--<Shape Type="string">Box</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">0</UseWorldMatrix>
+									<max Type="Vector3D">-0.05 -0.05 -0.004</max>
+									<min Type="Vector3D">0.05 0.05 0.004</min>-->
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 0.2</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex">
+										<Parameters>
+											<ENABLE_OFFSET_ALONG_NORMAL Type="bool">0</ENABLE_OFFSET_ALONG_NORMAL>
+											<VERTEX_OFFSET Type="float">3.0</VERTEX_OFFSET>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>	
+						<SoundComponents>
+							
+						</SoundComponents>
+						<ParticleEmitterComponents>
+							<ParticleEmitterComponent Type="ParticleEmitterComponent">
+								<Parameters>
+									<Name Type="string">PEC</Name>									
+									<IsActive Type="bool">1</IsActive>
+									<AllowNewParticles Type="bool">1</AllowNewParticles>
+									<DefaultNumberOfParticles Type="size_t">20</DefaultNumberOfParticles>
+									<Position Type="Vector3D">0 0 0</Position>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<MinDeltaPosition Type="Vector3D">0.0 2.0 0.0</MinDeltaPosition>
+									<MaxDeltaPosition Type="Vector3D">0.0 2.0 0.0</MaxDeltaPosition>
+									<MinStartingScale Type="float">6.0</MinStartingScale>
+									<MaxScaleChangePercentPerSecond Type="float">0.2</MaxScaleChangePercentPerSecond>
+									<MaxLifeSeconds Type="float">6</MaxLifeSeconds>
+									<IsImposter Type="bool">1</IsImposter>
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="IMPOSTER" ShaderType="fragment">
+										<Parameters>
+											<COLOR_DIFFUSE Type="Vector4D">1.0 0.0 0.0 1.0</COLOR_DIFFUSE>
+											<COLOR_SPECULAR Type="Vector4D">1.0 1.0 1.0 1.0</COLOR_SPECULAR>
+											<TRANSPARENCY Type="unsigned int">1</TRANSPARENCY>
+										</Parameters>										
+									</ShaderFeature>
+									<ShaderFeature Name="INSTANCED_DRAW" ShaderType="vertex">
+										<Parameters>
+											<RENDER_MODE Type="long">0x1B02</RENDER_MODE>
+										</Parameters>										
+									</ShaderFeature>
+								</ShaderFeatures>
+							</ParticleEmitterComponent>
+						</ParticleEmitterComponents>
+						
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">ReactorDown</Name>
+									<Path Type="string">reactorshutdown.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>			
+						</SoundComponents>						
+					</Components>
+				</GameObject>	
+				
+				<GameObject Name="EXIT_CUBE" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">CubeMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">cube.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10 120.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">20.0 20.0 20.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 0.1</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+					</Components>
+				</GameObject>		
+				<GameObject Name="CAGE" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">CubeMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">cube.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">180.0 4.1 -120.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">8.0 8.0 8.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.0 0.0 1.0 0.2</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+					</Components>
+				</GameObject>						
+			
+				<GameObject Name="SPHERE" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">DebugSphere_small.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">1.0 0.1 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.1 1.1 1.1</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+					</Components>
+				</GameObject>	
+				
+				<GameObject Name="PLANE_50x50_MAIN_DOWN" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">mainRoomGround</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 -60.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_50x50_MAIN_UP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">mainRoomCeiling</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 20.0 -60.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">180.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+								
+				<GameObject Name="PLANE_50x50_BOSSROOM_DOWN" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">mainRoomGround</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 -160.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_50x50_BOSSROOM_UP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">mainRoomCeiling</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 20.0 -160.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">180.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				
+						
+				<GameObject Name="PLANE_50x50_REACTORROOM_DOWN" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">reactorGround</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 -260.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_50x50_REACTORROOM_UP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">reactorCeiling</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 20.0 -260.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">180.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_20x20_REACTOR_FRONT" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">reactorFrontWall</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10.0 -310.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">90.0 0.0 180.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">5.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>						
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+
+			
+				<GameObject Name="KEY" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">Button.ply</MeshFile>
+									<TexturesPath Type="string">Button</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-180.0 10 -50.1</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 5.0 5.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Box</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<max Type="Vector3D">0.5 0.5 0.5</max>	
+									<min Type="Vector3D">-0.5 -0.5 -0.5</min>					
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							
+						</AIBehaviors>
+					</Components>
+				</GameObject>
+				
+								
+				<GameObject Name="PLANE_50x50_KEYROOM_DOWN" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">mainRoomGround</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-180.0 0.0 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_50x50_KEYROOM_UP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">roomCeiling</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-180.0 20.0 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">180.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+					
+				<GameObject Name="PLANE_50x50_RESCUEROOM_DOWN" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">mainRoomGround</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">180.0 0.0 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_50x50_RESCUEROOM_UP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_50x50.ply</MeshFile>
+									<TexturesPath Type="string">roomCeiling</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">180.0 20.0 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">180.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 50</P0>
+									<P1 Type="Vector3D">50 0 -50</P1>
+									<P2 Type="Vector3D">-50 0 -50</P2>
+									<P3 Type="Vector3D">-50 0 50</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+									
+									
+				<GameObject Name="PLANE_10x10_CORRIDOR1_DOWN" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorGround</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 0.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>			
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_10x10_CORRIDOR1_UP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorCeiling</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 20.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 20.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">180.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>			
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_10x10_CORRIDOR1_WALL" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorWall2</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-10.0 10.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 -90.0 -90.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>			
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				
+				<GameObject Name="PLANE_10x10_ROOM_LEFT" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorWall2</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-10.0 10.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 -90.0 -90.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">0</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_10x10_ROOM_RIGHT" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorWall2</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">10.0 10.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 90.0 90.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">0</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+				<GameObject Name="PLANE_10x10_ROOM_BACK" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorWall2</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10.0 -90.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">-90.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">0</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+						
+				<GameObject Name="PLANE_20x20_GLASS_FRONT" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_100x20_XY.ply</MeshFile>
+									<TexturesPath Type="string">Window_ratio5To1</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10.0 -110.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">90.0 0.0 180.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 10</P0>
+									<P1 Type="Vector3D">50 0 -10</P1>
+									<P2 Type="Vector3D">-50 0 -10</P2>
+									<P3 Type="Vector3D">-50 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">1</TRANSPARENCY>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+
+				<GameObject Name="PLANE_20x20_PANEL_WALL01" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">corridorWall2</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-10.0 10.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+				<GameObject Name="PLANE_100x20_PANEL_WALL01" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_100x20_XY.ply</MeshFile>
+									<TexturesPath Type="string">corridorWall2</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10.0 -110.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">90.0 0.0 180.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">50 0 10</P0>
+									<P1 Type="Vector3D">50 0 -10</P1>
+									<P2 Type="Vector3D">-50 0 -10</P2>
+									<P3 Type="Vector3D">-50 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0</UVOFFSET>
+											<TILING Type="Vector2D">5.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>	
+
+				<GameObject Name="DOOR_BARS" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">bars</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10.0 -210.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">90.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 1.0 1.0</Scale>										
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">1</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">5.0 1.0</TILING>											
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>			
+				<GameObject Name="DOOR_ENTRY" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">DoorWithWindow</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10.0 150.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">-90.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">1</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+				<GameObject Name="DOOR_01" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">Door</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-70.0 10.0 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">-90.0 -90.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+				<GameObject Name="DOOR_02" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">QuadMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">PLANE_10x10.ply</MeshFile>
+									<TexturesPath Type="string">Door</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">70.0 10.0 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">-90.0 90.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.5</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Plane</Shape>
+									<UseMesh Type="bool">0</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<P0 Type="Vector3D">10 0 10</P0>
+									<P1 Type="Vector3D">10 0 -10</P1>
+									<P2 Type="Vector3D">-10 0 -10</P2>
+									<P3 Type="Vector3D">-10 0 10</P3>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 1.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<TRANSPARENCY Type="unsigned int">0</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.0</UVOFFSET>
+											<TILING Type="Vector2D">1.0 1.0</TILING>
+										</Parameters>
+									</ShaderFeature>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>				
+					</Components>					
+				</GameObject>
+			
+			
+				<GameObject Name="HOSTAGE" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">HOSTAGE_MESH</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">HOSTAGE.fbx</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">178.0 0.15 -120.0</Position>									
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 -90.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">2.0 2.0 2.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Capsule</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.25</radius>
+									<start Type="Vector3D">0 0.25 0</start>
+									<end Type="Vector3D">0 0.75 0</end>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+							<SkinnedMesh Type="SkinnedMesh">
+								<Parameters>
+									<Name Type="string">HOSTAGE_CHARACTER</Name>
+									<MeshName Type="string">HOSTAGE_0</MeshName>
+									<MeshPath Type="string">HOSTAGE.fbx</MeshPath>
+									<AnimationCount Type="unsigned int">3</AnimationCount>
+									<AnimationName0 Type="string">Idle</AnimationName0>
+									<AnimationPath0 Type="string">HOSTAGE_Idle.fbx</AnimationPath0>
+									<AnimationName1 Type="string">Running</AnimationName1>
+									<AnimationPath1 Type="string">HOSTAGE_Running.fbx</AnimationPath1>
+									<AnimationName2 Type="string">Attack</AnimationName2>
+									<AnimationPath2 Type="string">HOSTAGE_Attack.fbx</AnimationPath2>														
+								</Parameters>
+							</SkinnedMesh>					
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="SKINNEDMESH" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+									
+						</AIBehaviors>
+						<SoundComponents>
+										
+						</SoundComponents>	
+					</Components>
+				</GameObject>
+								
+			
+				<GameObject Name="PROJECTILE_BLASTER" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">LaserProjectile.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">1.0 5000.0 0.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">1.0 1.0 1.0</Scale>			
+									<Mass Type="float">2.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.0 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.92 0.52 0.20 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>							
+						</RenderComponents>	
+						<LightComponents>
+							<LightComponent Type="LightPoint">
+								<Parameters>
+									<IsVisible Type="bool">1</IsVisible>
+									<Position Type="Vector3D">0 0 0</Position>
+									<DiffuseColor Type="Vector4D">0.92 0.52 0.20 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">1.0 1.0 1.0 1000.0</SpecularColor>
+									<ConstAttenuation Type="float">0.000000</ConstAttenuation>
+									<LinearAttenuation Type="float">0.05</LinearAttenuation>
+									<QuadraticAttenuation Type="float">0.00000</QuadraticAttenuation>									
+									<DistanceCutOff Type="float">10</DistanceCutOff>
+								</Parameters>
+							</LightComponent>
+						</LightComponents>
+					</Components>
+				</GameObject>	
+
+				<GameObject Name="PROJECTILE_WTW" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">DebugSphere_small.ply</MeshFile>
+									<TexturesPath Type="string">wtw</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">200.0 8 -100.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">90.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 5.0 5.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment">
+										<Parameters>
+											<COLOR_DIFFUSE Type="Vector4D">1.0 0.0 0.0 1.0</COLOR_DIFFUSE>
+											<COLOR_SPECULAR Type="Vector4D">1.0 1.0 1.0 1.0</COLOR_SPECULAR>
+											<OFFSET_TYPE Type="unsigned long">2</OFFSET_TYPE>
+											<TRANSPARENCY Type="int">1</TRANSPARENCY>
+											<UVOFFSET Type="Vector2D">0.0 0.5</UVOFFSET>
+										</Parameters>
+									</ShaderFeature>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>	
+						<LightComponents>
+							<LightComponent Type="LightPoint">
+								<Parameters>
+									<IsVisible Type="bool">0</IsVisible>
+									<Position Type="Vector3D">0 0 0</Position>
+									<DiffuseColor Type="Vector4D">0.0 0.0 1.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">1.0 1.0 1.0 1000.0</SpecularColor>
+									<ConstAttenuation Type="float">0.000000</ConstAttenuation>
+									<LinearAttenuation Type="float">0.03</LinearAttenuation>
+									<QuadraticAttenuation Type="float">0.00000</QuadraticAttenuation>									
+									<DistanceCutOff Type="float">10</DistanceCutOff>
+								</Parameters>
+							</LightComponent>
+						</LightComponents>						
+					</Components>
+				</GameObject>	
+				
+				<GameObject Name="PLAYER_COLLISIONSPHERE" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">DebugSphere_small.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 10 120.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">8.0 8.0 8.0</Scale>			
+									<Mass Type="float">0.1</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>								
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 0.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>	
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">BlasterSound</Name>
+									<Path Type="string">laser1.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">1</SourceType>
+								</Parameters>
+							</SoundComponent>	
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WTWCannonBlast</Name>
+									<Path Type="string">WTWCannonBlast.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">1</SourceType>
+								</Parameters>
+							</SoundComponent>								
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">NightVision</Name>
+									<Path Type="string">electricity.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>											
+						</SoundComponents>						
+					</Components>
+				</GameObject>				
+
+				<GameObject Name="ENEMY_TURRET_BASE1" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">TurretBase.ply</MeshFile>
+									<TexturesPath Type="string">Turret01</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-30.0 0.1 -80.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">0</AllowCollisionDetection>
+									<Scale Type="Vector3D">10.0 10.0 10.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Box</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<max Type="Vector3D">0.5 0.5 0.5</max>	
+									<min Type="Vector3D">-0.5 -0.5 -0.5</min>										
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+					</Components>
+				</GameObject>	
+				<GameObject Name="ENEMY_TURRET_TOP1" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">TurretTop_Translated.ply</MeshFile>
+									<TexturesPath Type="string">Turret01</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-30.0 2.5 -80.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">7.0 7.0 7.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>						
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">100</Radius>
+									<RotationalGain Type="float">5</RotationalGain>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="shootat">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<Projectile Type="Entity">PROJECTILE_BLASTER</Projectile>
+									<ProjectileImpulse Type="float">40</ProjectileImpulse>
+									<Scene Type="Scene">Scene1</Scene>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">100</Radius>
+									<Crosshair Type="Vector3D">0.0 0.05 -80</Crosshair>
+									<IntervalBetweenShots Type="float">2</IntervalBetweenShots>
+									<StartPositionsCount Type="unsigned long">2</StartPositionsCount>
+									<StartPosition0 Type="Vector3D">0.5 0.11 -0.5</StartPosition0>
+									<StartPosition1 Type="Vector3D">-0.5 0.11 -0.5</StartPosition1>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WeaponSound</Name>
+									<Path Type="string">laser9.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>									
+						</SoundComponents>		
+					</Components>
+				</GameObject>	
+				
+				<GameObject Name="ENEMY_DRONE0_UNIT1" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">Drone0.ply</MeshFile>
+									<TexturesPath Type="string">Drone0</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-180.0 10 -80.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 5.0 5.0</Scale>			
+									<Mass Type="float">2.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>						
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							<AIBehavior Type="pursue">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<MinDistance Type="float">40</MinDistance>
+									<MaxDistance Type="float">100</MaxDistance>
+									<TopSpeed Type="float">50</TopSpeed>
+									<SlowingDistance Type="float">10</SlowingDistance>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="evadebymatch">
+								<Parameters>
+									<TargetNameMatch Type="string">FIREDBYPLAYER</TargetNameMatch>
+									<IsActive Type="bool">1</IsActive>
+									<MinDistance Type="float">40</MinDistance>
+									<MaxDistance Type="float">100</MaxDistance>
+									<TopSpeed Type="float">50</TopSpeed>
+									<SlowingDistance Type="float">0</SlowingDistance>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">80</Radius>
+									<RotationalGain Type="float">10</RotationalGain>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="shootat">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<Projectile Type="Entity">PROJECTILE_BLASTER</Projectile>
+									<ProjectileImpulse Type="float">50</ProjectileImpulse>
+									<Scene Type="Scene">Scene1</Scene>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">60</Radius>
+									<Crosshair Type="Vector3D">0.0 0.05 -80</Crosshair>
+									<IntervalBetweenShots Type="float">1.5</IntervalBetweenShots>
+									<StartPositionsCount Type="unsigned long">2</StartPositionsCount>
+									<StartPosition0 Type="Vector3D">0.5 0.11 -0.5</StartPosition0>
+									<StartPosition1 Type="Vector3D">-0.5 0.11 -0.5</StartPosition1>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WeaponSound</Name>
+									<Path Type="string">laser9.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>									
+						</SoundComponents>		
+					</Components>
+				</GameObject>
+				
+				<GameObject Name="ENEMY_DRONE1_UNIT1" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">Drone1.ply</MeshFile>
+									<TexturesPath Type="string">Drone1</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">180.0 10 -80.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 5.0 5.0</Scale>			
+									<Mass Type="float">2.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>						
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">1.0 0.0 0.0 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="TEXTURIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							<AIBehavior Type="pursue">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<MinDistance Type="float">40</MinDistance>
+									<MaxDistance Type="float">100</MaxDistance>
+									<TopSpeed Type="float">50</TopSpeed>
+									<SlowingDistance Type="float">10</SlowingDistance>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="evadebymatch">
+								<Parameters>
+									<TargetNameMatch Type="string">FIREDBYPLAYER</TargetNameMatch>
+									<IsActive Type="bool">1</IsActive>
+									<MinDistance Type="float">40</MinDistance>
+									<MaxDistance Type="float">100</MaxDistance>
+									<TopSpeed Type="float">60</TopSpeed>
+									<SlowingDistance Type="float">0</SlowingDistance>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">80</Radius>
+									<RotationalGain Type="float">10</RotationalGain>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="shootat">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<Projectile Type="Entity">PROJECTILE_BLASTER</Projectile>
+									<ProjectileImpulse Type="float">60</ProjectileImpulse>
+									<Scene Type="Scene">Scene1</Scene>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">80</Radius>
+									<Crosshair Type="Vector3D">0.0 0.05 -80</Crosshair>
+									<IntervalBetweenShots Type="float">1</IntervalBetweenShots>
+									<StartPositionsCount Type="unsigned long">2</StartPositionsCount>
+									<StartPosition0 Type="Vector3D">0.5 0.11 -0.5</StartPosition0>
+									<StartPosition1 Type="Vector3D">-0.5 0.11 -0.5</StartPosition1>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WeaponSound</Name>
+									<Path Type="string">laser9.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>									
+						</SoundComponents>		
+					</Components>
+				</GameObject>	
+								
+				<GameObject Name="ENEMY_BOSS_BODY" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">BOSS.ply</MeshFile>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">0.0 6 -180.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">12.0 12.0 12.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>						
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 0.05</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="INTERPOLATION_COLORIZE" ShaderType="fragment" IsActive="0">
+										<Parameters>
+											<COLOR_A Type="Vector4D">1 0 0 1</COLOR_A>
+											<COLOR_B Type="Vector4D">0 1 0 1</COLOR_B>
+										</Parameters>
+									</ShaderFeature>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							
+						</AIBehaviors>
+						<SoundComponents>
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">BossRoar</Name>
+									<Path Type="string">BossRoar.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>							
+						</SoundComponents>	
+					</Components>
+				</GameObject>
+				<GameObject Name="ENEMY_BOSS_TURRET_TOP" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">TurretTop_Translated.ply</MeshFile>									
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-0.0 13 -180.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">7.0 7.0 7.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>						
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 0.05</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="INTERPOLATION_COLORIZE" ShaderType="fragment" IsActive="0">
+										<Parameters>
+											<COLOR_A Type="Vector4D">0 1 0 1</COLOR_A>
+											<COLOR_B Type="Vector4D">0 0 1 1</COLOR_B>
+										</Parameters>
+									</ShaderFeature>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">500</Radius>
+									<RotationalGain Type="float">10</RotationalGain>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="shootat">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<Projectile Type="Entity">PROJECTILE_BLASTER</Projectile>
+									<ProjectileImpulse Type="float">80</ProjectileImpulse>
+									<Scene Type="Scene">Scene1</Scene>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">500</Radius>
+									<Crosshair Type="Vector3D">0.0 0.05 -500</Crosshair>
+									<IntervalBetweenShots Type="float">1</IntervalBetweenShots>
+									<StartPositionsCount Type="unsigned long">2</StartPositionsCount>
+									<StartPosition0 Type="Vector3D">0.5 0.11 -0.5</StartPosition0>
+									<StartPosition1 Type="Vector3D">-0.5 0.11 -0.5</StartPosition1>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>
+						<SoundComponents>							
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WeaponSound</Name>
+									<Path Type="string">laser9.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>									
+						</SoundComponents>		
+					</Components>
+				</GameObject>	
+				<GameObject Name="ENEMY_BOSS_TURRET_BOTTOM" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">SphereMesh</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">TurretTop_Translated.ply</MeshFile>									
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-0.0 4 -180.0</Position>
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 180.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">7.0 7.0 7.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Sphere</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.5</radius>
+									<center Type="Vector3D">0 0.5 0</center>						
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>
+						<SkinnedMeshes>						
+								
+						</SkinnedMeshes>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 0.05</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="COLORIZE" ShaderType="fragment"/>
+									<ShaderFeature Name="INTERPOLATION_COLORIZE" ShaderType="fragment" IsActive="0">
+										<Parameters>
+											<COLOR_A Type="Vector4D">0 1 0 1</COLOR_A>
+											<COLOR_B Type="Vector4D">0 0 1 1</COLOR_B>
+										</Parameters>
+									</ShaderFeature>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">500</Radius>
+									<RotationalGain Type="float">5</RotationalGain>
+								</Parameters>
+							</AIBehavior>
+							<AIBehavior Type="shootat">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<Projectile Type="Entity">PROJECTILE_BLASTER</Projectile>
+									<ProjectileImpulse Type="float">20</ProjectileImpulse>
+									<Scene Type="Scene">Scene1</Scene>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">500</Radius>
+									<Crosshair Type="Vector3D">0.0 0.05 -500</Crosshair>
+									<IntervalBetweenShots Type="float">1.5</IntervalBetweenShots>
+									<StartPositionsCount Type="unsigned long">2</StartPositionsCount>
+									<StartPosition0 Type="Vector3D">0.5 0.11 -0.5</StartPosition0>
+									<StartPosition1 Type="Vector3D">-0.5 0.11 -0.5</StartPosition1>
+								</Parameters>
+							</AIBehavior>
+						</AIBehaviors>
+						<SoundComponents>							
+							<SoundComponent Type="SoundComponent">
+								<Parameters>
+									<Name Type="string">WeaponSound</Name>
+									<Path Type="string">laser9.wav</Path>
+									<IsActive Type="bool">0</IsActive>
+									<SourceType Type="int">0</SourceType>
+								</Parameters>
+							</SoundComponent>									
+						</SoundComponents>		
+					</Components>
+				</GameObject>	
+							
+				<GameObject Name="ANTICLOAK_PLANE" Type="GameObject">
+					<Components>
+						<MeshComponents>
+							<MeshComponent Type="MeshComponent">
+								<Parameters>								
+									<Name Type="string">Anticloak_MESH</Name>
+									<LevelOfDetail Type="unsigned int">1</LevelOfDetail>
+									<MeshFile Type="string">imposter.ply</MeshFile>
+									<TexturesPath Type="string">Anticloak</TexturesPath>
+									<AllowMeshTransform Type="bool">0</AllowMeshTransform>
+								</Parameters>
+							</MeshComponent>
+						</MeshComponents>
+						<PhysicsComponents>
+							<PhysicsComponent Type="Rigidbody">
+								<Parameters>
+									<!-- Rigidbody properties -->
+									<Position Type="Vector3D">-178.0 10 -120.0</Position>									
+									<Orientation Type="Vector3D">0.0 0.0 -1.0</Orientation>
+									<Up Type="Vector4D">0.0 1.0 0.0 0</Up>
+									<Rotation Type="Vector3D">0.0 0.0 0.0</Rotation>					
+									<Velocity Type="Vector3D">0.0 0.0 0.0</Velocity>
+									<Acceleration Type="Vector3D">0.0 0.0 0.0</Acceleration>
+									<AllowCollisionDetection Type="bool">1</AllowCollisionDetection>
+									<Scale Type="Vector3D">5.0 5.0 5.0</Scale>			
+									<Mass Type="float">0.0</Mass>
+									<Elasticity Type="float">0.1</Elasticity>
+									<!-- Collider -->
+									<Shape Type="string">Capsule</Shape>
+									<UseMesh Type="bool">1</UseMesh>
+									<UseWorldMatrix Type="bool">1</UseWorldMatrix>
+									<radius Type="float">0.25</radius>
+									<start Type="Vector3D">0 0.25 0</start>
+									<end Type="Vector3D">0 0.75 0</end>
+								</Parameters>
+							</PhysicsComponent>
+						</PhysicsComponents>						
+						<RenderComponents>
+							<RenderComponent Type="RenderComponent">
+								<Parameters>
+									<DiffuseColor Type="Vector4D">0.5 0.5 0.5 1.0</DiffuseColor>
+									<SpecularColor Type="Vector4D">0.0 0.0 0.0 1000.0</SpecularColor>
+									<IsVisible Type="bool">1</IsVisible>
+									<RenderMode Type="string">Fill</RenderMode>	
+								</Parameters>
+								<ShaderFeatures>
+									<ShaderFeature Name="IMPOSTER" ShaderType="fragment"/>
+									<ShaderFeature Name="BASIC_VERTEX_DRAW" ShaderType="vertex"/>
+								</ShaderFeatures>
+							</RenderComponent>
+						</RenderComponents>						
+						<AIBehaviors>				
+							<AIBehavior Type="lookattarget">
+								<Parameters>
+									<Target Type="Entity">PLAYER_COLLISIONSPHERE</Target>
+									<IsActive Type="bool">1</IsActive>
+									<Radius Type="float">500</Radius>
+									<RotationalGain Type="float">10</RotationalGain>
+								</Parameters>
+							</AIBehavior>						
+						</AIBehaviors>
+						<SoundComponents>
+										
+						</SoundComponents>	
+					</Components>
+				</GameObject>
+
+					
+			</GameObjects>
+			
+			<AIGroupBehaviors>
+				
+			</AIGroupBehaviors>
+	
+		</Scene>
+	</Scenes>
+</Level>

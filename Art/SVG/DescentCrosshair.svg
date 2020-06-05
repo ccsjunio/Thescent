@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   width="640"
+   height="640"
+   viewBox="0 0 639.99999 639.99999"
+   sodipodi:docname="DescentCrosshair.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="C:\Programming\Online\GitHub\BellEngine\Game\assets\textures\DescentCockpitCrosshair\crosshair.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview4"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.81483007"
+     inkscape:cx="307.50964"
+     inkscape:cy="350.13604"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <rect
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:8.67887402;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect976"
+     width="640"
+     height="640"
+     x="0"
+     y="0" />
+  <g
+     id="g974"
+     transform="matrix(0.72725438,0,0,0.72725438,76.109647,119.94781)">
+    <circle
+       r="8.5177002"
+       cy="271.55402"
+       cx="306.30429"
+       id="path817"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#00ff00;stroke-width:2.18219233;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path834"
+       d="m 282.30567,299.27843 c 43.4072,-16.6047 43.70474,-16.52985 43.70474,-16.52985"
+       style="fill:none;stroke:#00ff00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <circle
+       transform="scale(-1,1)"
+       r="8.5177002"
+       cy="270.34244"
+       cx="-362.89243"
+       id="path817-1"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#00ff00;stroke-width:2.18219233;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path834-1"
+       d="M 388.40972,298.68305 C 345.00252,282.07835 344.70498,282.1532 344.70498,282.1532"
+       style="fill:none;stroke:#00ff00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path921"
+       d="m 321.91224,250.4252 c 9.585,9.585 9.585,9.585 9.585,9.585"
+       style="fill:none;stroke:#00ff00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path921-0"
+       d="m 340.08394,268.59689 c 9.58501,9.58501 9.58501,9.58501 9.58501,9.58501"
+       style="fill:none;stroke:#00ff00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path921-2"
+       d="m 349.66895,250.4252 c -9.58501,9.585 -9.58501,9.585 -9.58501,9.585"
+       style="fill:none;stroke:#00ff00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path921-0-7"
+       d="m 331.49724,268.59689 c -9.585,9.58501 -9.585,9.58501 -9.585,9.58501"
+       style="fill:none;stroke:#00ff00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

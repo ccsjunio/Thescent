@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="ASSETSFOLDER">
+            <Directory Id="dir52A92A588761F190E686D198DA1613CD" Name="config">
+                <Component Id="cmp307DE1779A6BA29B538C23B9C14F783C" Guid="*">
+                    <File Id="fil7F68E20E352D7B6BDB8F67DE4C00CDBF" KeyPath="yes" Source="$(var.AssetsPath)\config\ChapterDefinition.xml" />
+                </Component>
+                <Component Id="cmpB6922BCB03D6ED9811075FB08FEFE4E4" Guid="*">
+                    <File Id="fil73B370EEF484B5D71BC8B283498FB30B" KeyPath="yes" Source="$(var.AssetsPath)\config\game.cfg" />
+                </Component>
+                <Component Id="cmpDB9F9932D299A5FAC022998E10AFD4D0" Guid="*">
+                    <File Id="fil0959D03D75FF718A2DB9A6953AE34FBC" KeyPath="yes" Source="$(var.AssetsPath)\config\level.xml" />
+                </Component>
+                <Component Id="cmp52F32FAB7122B6DF1F85CE3536B80FAC" Guid="*">
+                    <File Id="fil7C8ECC84CB47D3A64B71968023C487C2" KeyPath="yes" Source="$(var.AssetsPath)\config\shader_programs.xml" />
+                </Component>
+            </Directory>
+            <Directory Id="dir530100577DE56B1677E8E7D65AD257C3" Name="models">
+                <Component Id="cmp88C05DD4E519F3D9273232DBFFFA3DA3" Guid="*">
+                    <File Id="filAA34902902604746E75FCF0D75459A60" KeyPath="yes" Source="$(var.AssetsPath)\models\bigplane.ply" />
+                </Component>
+                <Component Id="cmp7169627A44D7699D09BFB68A7751963C" Guid="*">
+                    <File Id="filBB3234FEF25CF6C5013EE0685CC589A1" KeyPath="yes" Source="$(var.AssetsPath)\models\BOSS.ply" />
+                </Component>
+                <Component Id="cmp53E091DBF590DEC1F10E921F20CB7D3B" Guid="*">
+                    <File Id="filDEDE932178347E81777C3CEFA7032C39" KeyPath="yes" Source="$(var.AssetsPath)\models\Button.ply" />
+                </Component>
+                <Component Id="cmp5422750EAAFC764F38DD823C67502318" Guid="*">
+                    <File Id="filDB84E8C964BC94A3827908DB0BF5B1A1" KeyPath="yes" Source="$(var.AssetsPath)\models\Capsule.ply" />
+                </Component>
+                <Component Id="cmpA7463C10771BBC92CDB3E91C0A1E59BF" Guid="*">
+                    <File Id="filFB020BC6BA98A6325DDF81EEA152DE72" KeyPath="yes" Source="$(var.AssetsPath)\models\cube.ply" />
+                </Component>
+                <Component Id="cmpA425486C7A3559D636934E856DC376F5" Guid="*">
+                    <File Id="fil0E6BAFD4883E448187D935B3A11B93BC" KeyPath="yes" Source="$(var.AssetsPath)\models\DebugSphere_small.ply" />
+                </Component>
+                <Component Id="cmp9522BE0A84CC43A6C160A992FE973E14" Guid="*">
+                    <File Id="filC3240BFBD6AC31C39B2380BAC0286332" KeyPath="yes" Source="$(var.AssetsPath)\models\Drone0.ply" />
+                </Component>
+                <Component Id="cmp5DAAF58D2BA01BF9E0D85DCF3EC704FB" Guid="*">
+                    <File Id="fil55955143081232AA03F949CB1E3FF494" KeyPath="yes" Source="$(var.AssetsPath)\models\Drone1.ply" />
+                </Component>
+                <Component Id="cmp20D9781B3D51DBD864B013B26AE2D4DD" Guid="*">
+                    <File Id="filFA4B8A588419063AE0721405902C83A3" KeyPath="yes" Source="$(var.AssetsPath)\models\HOSTAGE.fbx" />
+                </Component>
+                <Component Id="cmpD94518EDD55E6D393C7F22E6022894BD" Guid="*">
+                    <File Id="fil78B920AC3D4D042A015156B10BEABF0B" KeyPath="yes" Source="$(var.AssetsPath)\models\HOSTAGE_Attack.fbx" />
+                </Component>
+                <Component Id="cmpB0995AB91D821D1418859BDBC0FFABEC" Guid="*">
+                    <File Id="fil0DD38A4964EDF7051ECEADD64A75F776" KeyPath="yes" Source="$(var.AssetsPath)\models\HOSTAGE_Idle.fbx" />
+                </Component>
+                <Component Id="cmpF3279579977A60B7FECD7A2143D38C15" Guid="*">
+                    <File Id="filB377E24869D33676337E2746BA03268E" KeyPath="yes" Source="$(var.AssetsPath)\models\HOSTAGE_Running.fbx" />
+                </Component>
+                <Component Id="cmp7F72CC5F34DA6CCBC9D99BA55DCE5960" Guid="*">
+                    <File Id="filD12D1DDAB4A63B1ED9FFD5DAEF9A49C3" KeyPath="yes" Source="$(var.AssetsPath)\models\imposter.ply" />
+                </Component>
+                <Component Id="cmp814280EA933DC5CD723FC081B55355CE" Guid="*">
+                    <File Id="filE17EE7C2DCA1F3F3A697A8980846B5C5" KeyPath="yes" Source="$(var.AssetsPath)\models\LaserProjectile.ply" />
+                </Component>
+                <Component Id="cmp4E6AEA620F28AE1BE09BF640C5D2F13E" Guid="*">
+                    <File Id="fil6ED870C05E696CFADC3A2C1C099249A5" KeyPath="yes" Source="$(var.AssetsPath)\models\lowResParticle.ply" />
+                </Component>
+                <Component Id="cmp51D8AC4FA04E681EEB34751D15196D9C" Guid="*">
+                    <File Id="fil96119F42D510A492B012500ABB63C2C0" KeyPath="yes" Source="$(var.AssetsPath)\models\plane1x1.ply" />
+                </Component>
+                <Component Id="cmpA7276669A6F428761FFA44190DAAB9C9" Guid="*">
+                    <File Id="filE8D1D35D30B4D2B5437551857543E73B" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANEDOWN.ply" />
+                </Component>
+                <Component Id="cmp952814339557B9C3AD79FCCCB5DA101E" Guid="*">
+                    <File Id="filA427D7339DB1912F31D3891537A69C36" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANELEFT.ply" />
+                </Component>
+                <Component Id="cmpE0E1050E9DD26876F361EA4D3CCD279F" Guid="*">
+                    <File Id="fil16345BB60DC019536B5F6D6D45DD4544" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANERIGHT.ply" />
+                </Component>
+                <Component Id="cmp756895652E09211B1E62A8E7C967EF56" Guid="*">
+                    <File Id="fil5936F75D11EE1C644E9BBED3AF02609E" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANETOP.ply" />
+                </Component>
+                <Component Id="cmpCD3B4F55C50BC2CB230EAE813D5A8DD8" Guid="*">
+                    <File Id="filEBFA3D2467CB55241132D2F927C27797" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANE_100x20_XY.ply" />
+                </Component>
+                <Component Id="cmp39717DC6F72C6500A61505C2C450D586" Guid="*">
+                    <File Id="fil6E62DCEA594C3501FB29ADAD2FE7279F" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANE_10x10.ply" />
+                </Component>
+                <Component Id="cmp1C1E7FF8DA4A8EDDBF9085E74FB5944F" Guid="*">
+                    <File Id="fil73C44F73AF1E9B952E7D21FB986841AC" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANE_20x15.ply" />
+                </Component>
+                <Component Id="cmp60DC9BFA686BCE95DB64E92A5F30C9BE" Guid="*">
+                    <File Id="fil538578D80DB713A2D102862B49EB8D7E" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANE_20x20_XY.ply" />
+                </Component>
+                <Component Id="cmp4B4F32B00592097F6AF3E243FA37BBC2" Guid="*">
+                    <File Id="fil29091214AA56490CDB85E00CA395AEAA" KeyPath="yes" Source="$(var.AssetsPath)\models\PLANE_50x50.ply" />
+                </Component>
+                <Component Id="cmpDA2F0A860CE0646E6AD0C0A037BC67AD" Guid="*">
+                    <File Id="filD1E74F7E5FAA44075F27FD50FABB9D90" KeyPath="yes" Source="$(var.AssetsPath)\models\pyro.ply" />
+                </Component>
+                <Component Id="cmpE755ACC7F5CBB869047777205BFEF896" Guid="*">
+                    <File Id="fil17B6746334F56D0CBADAD38D75FFE6B0" KeyPath="yes" Source="$(var.AssetsPath)\models\TurretBase.ply" />
+                </Component>
+                <Component Id="cmp55560E55DCB373CC25BB7EF90A05B6BF" Guid="*">
+                    <File Id="filC74491C25D230A042E2C59C95120C17E" KeyPath="yes" Source="$(var.AssetsPath)\models\TurretTop.ply" />
+                </Component>
+                <Component Id="cmp13E1FB6377CA251B952A70E51CDCD6AC" Guid="*">
+                    <File Id="fil2CF00790E2326642E25553D1168D94C8" KeyPath="yes" Source="$(var.AssetsPath)\models\TurretTop_Translated.ply" />
+                </Component>
+            </Directory>
+            <Directory Id="dir5323CC3DBA407D10A6B5E2099F31E36A" Name="scripts">
+                <Component Id="cmp826E85B48D36F57875DF5A5268296D62" Guid="*">
+                    <File Id="filB1F7D4EE9320F810232F240AB91BEA12" KeyPath="yes" Source="$(var.AssetsPath)\scripts\ApplyForce.lua" />
+                </Component>
+                <Component Id="cmp9666D965FBE289F8C1BFC44A3AB83789" Guid="*">
+                    <File Id="filB577F9055C711524EFF19FD29008CF63" KeyPath="yes" Source="$(var.AssetsPath)\scripts\OpenDoor.lua" />
+                </Component>
+                <Component Id="cmp808135DF6B458B3F54584EF6C4BCE96D" Guid="*">
+                    <File Id="fil3C52DB6B23E6A88A1C823FEAC201FBE4" KeyPath="yes" Source="$(var.AssetsPath)\scripts\PrintfTest.lua" />
+                </Component>
+                <Component Id="cmp8D933FADF4AA0C846777F7A5228F080A" Guid="*">
+                    <File Id="fil72C96D630D88B30A25E4A453D6C8378F" KeyPath="yes" Source="$(var.AssetsPath)\scripts\TriggerAnimation.lua" />
+                </Component>
+            </Directory>
+            <Directory Id="dir24DA63AFC8C3DA6D5E29518BF92E0257" Name="shaders">
+                <Component Id="cmpF71F1C4E5A2BD4DEE2DF95CE32AB6380" Guid="*">
+                    <File Id="fil75D6C85496F45AF0CE88575FA6DE9EBD" KeyPath="yes" Source="$(var.AssetsPath)\shaders\FragmentShader.glsl" />
+                </Component>
+                <Component Id="cmp8741E2C636A75E954AF6A3C0AD02ED1F" Guid="*">
+                    <File Id="fil619C4E2A6516E0F2C4216C48DACEBBD4" KeyPath="yes" Source="$(var.AssetsPath)\shaders\FragmentShaderColorize.glsl" />
+                </Component>
+                <Component Id="cmp83178F311314086C2B97731C26B7026F" Guid="*">
+                    <File Id="filA2A8B1ABCD6ABF5294D154B6A492DC7C" KeyPath="yes" Source="$(var.AssetsPath)\shaders\FragmentShaderImposter.glsl" />
+                </Component>
+                <Component Id="cmp01AFE3687EE30EB6A92D39F02029A508" Guid="*">
+                    <File Id="fil0001C3E0ADEBA2072F89041E0963D223" KeyPath="yes" Source="$(var.AssetsPath)\shaders\VertexBasicDraw.glsl" />
+                </Component>
+                <Component Id="cmpC9202A7971B3D824878B3FB2D58D65D4" Guid="*">
+                    <File Id="fil93C9CF0173FCE050209B5938A538E853" KeyPath="yes" Source="$(var.AssetsPath)\shaders\VertexInstanceRendering.glsl" />
+                </Component>
+                <Component Id="cmpF22001943A0B0473DFE1A1F08A3A1EDB" Guid="*">
+                    <File Id="filE0101AD3873884F826C7C15B91369EA4" KeyPath="yes" Source="$(var.AssetsPath)\shaders\VertexShader.glsl" />
+                </Component>
+                <Component Id="cmpE77366D62BC998F0DD368A2415613119" Guid="*">
+                    <File Id="fil57A93395695FBB61596C41A40D141ED1" KeyPath="yes" Source="$(var.AssetsPath)\shaders\VertexSkinnedMesh.glsl" />
+                </Component>
+            </Directory>
+            <Directory Id="dir95AD643F451335EAEAC1E99E2E4A4960" Name="sounds">
+                <Component Id="cmp6177B380028F3D231BFD9EA95A37E679" Guid="*">
+                    <File Id="fil0CC1FE128911D8DDB23585361CA533F1" KeyPath="yes" Source="$(var.AssetsPath)\sounds\Anticloak.wav" />
+                </Component>
+                <Component Id="cmp1D197A227400FC77AE34BEACE590EFBF" Guid="*">
+                    <File Id="filA2D2B2434C437CFCA6E0D57B653A1C0C" KeyPath="yes" Source="$(var.AssetsPath)\sounds\BossRoar.wav" />
+                </Component>
+                <Component Id="cmpEBA75D3D49D7290AD7FBD2D18DA7DBFC" Guid="*">
+                    <File Id="fil661C18BDF6850DC4555B41F26B510AFA" KeyPath="yes" Source="$(var.AssetsPath)\sounds\DavidHilowitzParalyticInsomniaTense.wav" />
+                </Component>
+                <Component Id="cmp7882219AB076261F03BBE69AFA9136BB" Guid="*">
+                    <File Id="filA0971337D7DFFB2C7539443B022D69F4" KeyPath="yes" Source="$(var.AssetsPath)\sounds\Denied.wav" />
+                </Component>
+                <Component Id="cmp5D50FF2778777820CD34E6E5332E526D" Guid="*">
+                    <File Id="fil537E1D1B2A7E5E3FF97C8BF64D91748D" KeyPath="yes" Source="$(var.AssetsPath)\sounds\electricity.wav" />
+                </Component>
+                <Component Id="cmp3B342BBFF0941BB136576A684FE79062" Guid="*">
+                    <File Id="filC023AB5BFA19F235A301A8C07CFA9C72" KeyPath="yes" Source="$(var.AssetsPath)\sounds\enemyexplosion1.wav" />
+                </Component>
+                <Component Id="cmpC207C4E789726597B97DFA045E8B11C3" Guid="*">
+                    <File Id="filB50ED47E7BA5812A35FB8219EBF9C8B2" KeyPath="yes" Source="$(var.AssetsPath)\sounds\Hatch.wav" />
+                </Component>
+                <Component Id="cmp17274F9700852438070C699DBA3C576E" Guid="*">
+                    <File Id="fil3A9F9EF1A648320A05701C5017B122F6" KeyPath="yes" Source="$(var.AssetsPath)\sounds\laser1.wav" />
+                </Component>
+                <Component Id="cmpDDE103ADDC91312CFF94B6AA25EE5B96" Guid="*">
+                    <File Id="filC1805ED197D934D19FEF979E54FD9784" KeyPath="yes" Source="$(var.AssetsPath)\sounds\laser9.wav" />
+                </Component>
+                <Component Id="cmp73AD919CD78BFD67B388028A7D447F7E" Guid="*">
+                    <File Id="fil69117A6B7B8D2BF3B7D28D4CDCB85818" KeyPath="yes" Source="$(var.AssetsPath)\sounds\reactorshutdown.wav" />
+                </Component>
+                <Component Id="cmpF8144A8A8064B910091E655D7F28A59A" Guid="*">
+                    <File Id="fil4548311862161F8D495714FA8A49C8E8" KeyPath="yes" Source="$(var.AssetsPath)\sounds\WTWCannon.wav" />
+                </Component>
+                <Component Id="cmp42D60B1D8A9811ED14790FD68551E7EB" Guid="*">
+                    <File Id="fil1007341B5DA574CD76C3A09D7BF51EE9" KeyPath="yes" Source="$(var.AssetsPath)\sounds\WTWCannonBlast.wav" />
+                </Component>
+            </Directory>
+            <Directory Id="dirE190EE9BA65781EC8BBDDD33A8FBB89D" Name="textures">
+                <Directory Id="dir7A8514928CF08ECE38A1A1F9E668EB0D" Name="aim">
+                    <Component Id="cmp57F03D22015185880FCBE6CE56507A20" Guid="*">
+                        <File Id="fil2DFB46679D319266195AD9C83C71CEAA" KeyPath="yes" Source="$(var.AssetsPath)\textures\aim\aim.bmp" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir742D592C96572376F84129EAF365EF1E" Name="Anticloak">
+                    <Component Id="cmp9FDF8598BB2F21710EF94D73435CF5F5" Guid="*">
+                        <File Id="fil055F4DD00F1A2212F6EEFB5E85E81262" KeyPath="yes" Source="$(var.AssetsPath)\textures\Anticloak\eye.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir049811AD25D448DDF7388E20B9E73CD5" Name="bars">
+                    <Component Id="cmpD60891344E740EC582BFEF0F73A6E7E9" Guid="*">
+                        <File Id="fil703D03E3DCA52AEB487012F302D260C7" KeyPath="yes" Source="$(var.AssetsPath)\textures\bars\Png.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir9B484774CEFA78F5989133CFBD7EDE5B" Name="Button">
+                    <Component Id="cmp0619F3F551B8F96A22E288CDBA22ED44" Guid="*">
+                        <File Id="fil2B9F6590CC201BADAD5CC754A295FD76" KeyPath="yes" Source="$(var.AssetsPath)\textures\Button\1051486687_2048x2048_6195987693227547908.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirF273927CFBBB8D80D36FF6B68EC70074" Name="cage">
+                    <Component Id="cmpC1B4A36ABACBDB5854AC38B524B52427" Guid="*">
+                        <File Id="fil23519B39105ABAFA0CC619F957403E58" KeyPath="yes" Source="$(var.AssetsPath)\textures\cage\img.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir89BDF60D809B56574D6195197E2AE1F0" Name="corridorCeiling">
+                    <Component Id="cmp630D1ADDD6F41E07A2EF34C0979B574C" Guid="*">
+                        <File Id="filD38049CA61B77A27D21D6D20FA0B6ABF" KeyPath="yes" Source="$(var.AssetsPath)\textures\corridorCeiling\corridorGround.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir5C21D8D94830BFBFB87F9D8AFC1AE74B" Name="corridorGround">
+                    <Component Id="cmp13D9A27F4C8FB2283F068BE06D625246" Guid="*">
+                        <File Id="filB7F9D15B1AE36E61CCF302F38335062A" KeyPath="yes" Source="$(var.AssetsPath)\textures\corridorGround\79610ae97ccd9bd8e59e0c4332ed075c.png" />
+                    </Component>
+                    <Component Id="cmpAA5EBADE4A97EF6F32027F4D5063A32C" Guid="*">
+                        <File Id="fil346F5CDC07D964364E978974BDAC5D27" KeyPath="yes" Source="$(var.AssetsPath)\textures\corridorGround\corridorGround.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir513E747E3ACE35427E35306F6DC5FDB4" Name="corridorWall">
+                    <Component Id="cmp68191FF237349586135A8DBB812FE0DB" Guid="*">
+                        <File Id="filD4FE64A56E6E53B907F8854904FE0B7E" KeyPath="yes" Source="$(var.AssetsPath)\textures\corridorWall\corridorWallfiltered.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirF003D2EAAB97F34AFE5E78AD36FB63C2" Name="corridorWall2">
+                    <Component Id="cmp4DC9959BF8E80E745C35490DFEF7431A" Guid="*">
+                        <File Id="filF4DA58F1CA4D3E76C19821B4A8AB92B8" KeyPath="yes" Source="$(var.AssetsPath)\textures\corridorWall2\d78d4069da54ade6085b7d540cfde597.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirF028F5FF39482CF1A80BBEBF629874B1" Name="corridorWall3">
+                    <Component Id="cmp20E735F1C084C23A86A1F5B36C98A27D" Guid="*">
+                        <File Id="filAA911B803452BD154771AFE17A519E95" KeyPath="yes" Source="$(var.AssetsPath)\textures\corridorWall3\corridorWall.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir9C6802A1F97EED03040A9C4D3F5BB0E7" Name="DescentCockpit">
+                    <Component Id="cmpAE95A9B3F3869B3DCEBB34AEDDB544A1" Guid="*">
+                        <File Id="filD9744CD24CE2C7FD487A525D38330D3A" KeyPath="yes" Source="$(var.AssetsPath)\textures\DescentCockpit\DescentText.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir3708B4488D8D6131902C16B2F05486A2" Name="DescentCockpitCrosshair">
+                    <Component Id="cmp3D49111343CE7E4FF0167A7BD05FDEF3" Guid="*">
+                        <File Id="fil4F5FE3FE6C5E3D0C6292BB618BE74EFB" KeyPath="yes" Source="$(var.AssetsPath)\textures\DescentCockpitCrosshair\crosshair.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirDA7D3940B0E9144A19BB386CB8CF4E4C" Name="Door">
+                    <Component Id="cmp7F7FDA82126ECA704CE4215CF1D3BA61" Guid="*">
+                        <File Id="fil449F0F34D9E71BDD7E228E337DB5F2B6" KeyPath="yes" Source="$(var.AssetsPath)\textures\Door\door.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirF604AF9F3BB9BC412C1F984A4D1850DF" Name="DoorWithWindow">
+                    <Component Id="cmp058D71AE85620C9DDC12FD7395F64DE3" Guid="*">
+                        <File Id="filC4AAE9178F98185ADF1597A1A867D701" KeyPath="yes" Source="$(var.AssetsPath)\textures\DoorWithWindow\door_porthole.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir04B0A5ABFB1E891380A4FAD681A0DBB7" Name="Drone0">
+                    <Component Id="cmp506B6EDDE4786AB88C0C1B0618DA3A41" Guid="*">
+                        <File Id="fil60E37F239FA919FBFE7EDF2A988ADCFF" KeyPath="yes" Source="$(var.AssetsPath)\textures\Drone0\4165071776_1024x1024_6195987693227547908.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir7B606E569770A6E6ED67A6C6AA78FE94" Name="Drone1">
+                    <Component Id="cmp437901C58D7482B220CE374A712F7055" Guid="*">
+                        <File Id="filB01A3105BE1DDA7161FE2A7DC301FC38" KeyPath="yes" Source="$(var.AssetsPath)\textures\Drone1\2845856298_512x512_6195987693227547908.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirAF86FA7389DB43E953C8C13CECDBC859" Name="glass">
+                    <Component Id="cmp43428C45F3BCA2972788218CEB141785" Guid="*">
+                        <File Id="fil4A7C45F579A4B6999CF76D94EA5FE4C0" KeyPath="yes" Source="$(var.AssetsPath)\textures\glass\glass.bmp" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirE71784CA24E5E2F1D63833984B7138C7" Name="GUI">
+                    <Component Id="cmpDB3978A08E4F59D0AACFD3425F767589" Guid="*">
+                        <File Id="fil1327216F0997C374C6462979A1163AC5" KeyPath="yes" Source="$(var.AssetsPath)\textures\GUI\anticloak.png" />
+                    </Component>
+                    <Component Id="cmpD925D43643F3AB221DB3BD23A14B98FB" Guid="*">
+                        <File Id="fil49046314EA55B4499BABDAFF7B474139" KeyPath="yes" Source="$(var.AssetsPath)\textures\GUI\Cannon.png" />
+                    </Component>
+                    <Component Id="cmp1A7E61D94999A0E34DDF5AB76CB2E08C" Guid="*">
+                        <File Id="fil88C82D5E0A1A31B43F52265B92E89DAA" KeyPath="yes" Source="$(var.AssetsPath)\textures\GUI\LaserBlaster.png" />
+                    </Component>
+                    <Component Id="cmp044AF4FE70168423E7583E241244BFBD" Guid="*">
+                        <File Id="fil04D50E34EB722D740A1EC7A5D56E65AA" KeyPath="yes" Source="$(var.AssetsPath)\textures\GUI\logo.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirB253AD78727B92248A94B5A1D36C2593" Name="mainRoomCeiling">
+                    <Component Id="cmp03C261ABDFB0C4CD84DEC7B19BF86E76" Guid="*">
+                        <File Id="filC3538F7D44212714156184B682F9F997" KeyPath="yes" Source="$(var.AssetsPath)\textures\mainRoomCeiling\mainRoomCeiling.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir1E11BC03DB2454ABB7635264BA50CAC5" Name="mainRoomGround">
+                    <Component Id="cmp1949CF448597E596D5F45A908A4BB592" Guid="*">
+                        <File Id="fil0DC4396A402777BAB2A9F615DC478E02" KeyPath="yes" Source="$(var.AssetsPath)\textures\mainRoomGround\corridorGround.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir2E5A9A0D22A93C4357B8028648F7360C" Name="reactorCeiling">
+                    <Component Id="cmpDC39FAC2442C5A027DA1E76D6DD327DA" Guid="*">
+                        <File Id="fil35BC0F6E84ABAA5D829C619CC40459C5" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorCeiling\reactor.png" />
+                    </Component>
+                    <Component Id="cmpB39EAAD15F8D3C551AF5C7F2803E1715" Guid="*">
+                        <File Id="filA959D4957EA7514130A43C13495C206B" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorCeiling\reactor2.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirA727418D8BE2FFE1E7EB447A8AF9B269" Name="reactorFrontWall">
+                    <Component Id="cmpCDABD9FA71F51A2E5D27A640F875BFC2" Guid="*">
+                        <File Id="fil1D5C3CE31105D5BF9558F027C283BA88" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorFrontWall\s1_fan.png" />
+                    </Component>
+                    <Component Id="cmpDFF8C99A24CB524E17787754C6BE9BCF" Guid="*">
+                        <File Id="fil5D687E930BC03A46E91D16E2DA0BAEF1" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorFrontWall\unnamed.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir09D92E644E681B70E910A37E080F5A7E" Name="reactorGround">
+                    <Component Id="cmpF459C281718552A97A62C37EC29D76AE" Guid="*">
+                        <File Id="fil44B183330660F1E799EDC1B6DE310DDF" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorGround\corridorGround.png" />
+                    </Component>
+                    <Component Id="cmpD0D6A8701597BCB0904BD86A5563EB61" Guid="*">
+                        <File Id="fil4B7A2D76AE664536603ADEDD0D96A73C" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorGround\reactor2.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir3ECC8085BAC2D4EE260476A26E638150" Name="reactorimposter">
+                    <Component Id="cmp5FFB0E66140F8F25B123D092E3CDD8E6" Guid="*">
+                        <File Id="filBE04FF38B5CD196245305AAF5DE19DD4" KeyPath="yes" Source="$(var.AssetsPath)\textures\reactorimposter\Png.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir559C934AEC59A71DA52FC13A0E2F0FFC" Name="roomCeiling">
+                    <Component Id="cmpA4390F43963D26F1BB2CA060353A550B" Guid="*">
+                        <File Id="fil7C0B1A90B0B9BD7727CF5A29B4861086" KeyPath="yes" Source="$(var.AssetsPath)\textures\roomCeiling\1479.png" />
+                    </Component>
+                    <Component Id="cmp558AF9489A48492954B2B3870A37E10B" Guid="*">
+                        <File Id="filBACFD59235442D6648E575BB0EC215B5" KeyPath="yes" Source="$(var.AssetsPath)\textures\roomCeiling\unnamed.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir478D41AE73478C76BE956EDF553E88E4" Name="skybox2">
+                    <Component Id="cmp07090EE8AC75F66C3B7FB427BF11174E" Guid="*">
+                        <File Id="fil7816303DA3FA3291BA9AD1C20F7C102E" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox2\back.png" />
+                    </Component>
+                    <Component Id="cmp948D4F9B2E845367BB15CDF0B2DBD24D" Guid="*">
+                        <File Id="fil8DB37215395A3503ACF315C5E5ED0013" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox2\bottom.png" />
+                    </Component>
+                    <Component Id="cmp8EBBFBC31D736789FFC83703828C0576" Guid="*">
+                        <File Id="filEE8F0CC0489A199913A43BA101518B3E" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox2\front.png" />
+                    </Component>
+                    <Component Id="cmp8A9190E14AC0AC6AB4A7ED26CB04CB16" Guid="*">
+                        <File Id="fil229BA179FB3A084D7D8FC0E9F7643B88" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox2\left.png" />
+                    </Component>
+                    <Component Id="cmp7DB1190FF23A1CE96384E7209AA11799" Guid="*">
+                        <File Id="filD49A1BA4AB5BEDEFE723F23B6B9EF4AF" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox2\right.png" />
+                    </Component>
+                    <Component Id="cmp0CF659A2523942A48E2CCF8B29B7BFE7" Guid="*">
+                        <File Id="filF28D3F93DA3366A0A162103CE3295DC8" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox2\top.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirFB10EFC437C3D8A0C605A58B0788F3C0" Name="skybox3">
+                    <Component Id="cmp54120BCF01B09A5139CA076C2CC9A15F" Guid="*">
+                        <File Id="fil5B2EA9CB48CC8FD6B680F43742819072" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox3\01right.png" />
+                    </Component>
+                    <Component Id="cmp3E807D81F08B566A295140164B5929CF" Guid="*">
+                        <File Id="fil1C2A724B71598B06ADF12361D4496EF7" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox3\02left.png" />
+                    </Component>
+                    <Component Id="cmp54547A0AFE28805A3353FFD905B2467C" Guid="*">
+                        <File Id="fil6577AFCAA514A4E7D609370E97CE02CE" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox3\03top.png" />
+                    </Component>
+                    <Component Id="cmp10925ACD40165018E072E34F15091F60" Guid="*">
+                        <File Id="fil264A4646B399EF0715F6509B2D6F9BFA" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox3\04bottom.png" />
+                    </Component>
+                    <Component Id="cmpDB8F3D7EA78A1228165EDBED66DBDB07" Guid="*">
+                        <File Id="fil66BC168C2897E8E896D1FDB4F7388A3F" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox3\05front.png" />
+                    </Component>
+                    <Component Id="cmpA9F71213F37637072D3674AAABFDFB52" Guid="*">
+                        <File Id="fil06557CE7CC7E75FF7F38B54829258D87" KeyPath="yes" Source="$(var.AssetsPath)\textures\skybox3\06back.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir4BA5F999EE6391D3C45CC915F8052CA9" Name="SkyboxSphere">
+                    <Component Id="cmp6A0D3D060E86C02307AD56060AE3AD20" Guid="*">
+                        <File Id="fil92829E8EA40EB82308DE24A141544493" KeyPath="yes" Source="$(var.AssetsPath)\textures\SkyboxSphere\01_desert_night_rt.png" />
+                    </Component>
+                    <Component Id="cmp67364ED4DBA357DA0DEEFD20ADF4CF74" Guid="*">
+                        <File Id="filCAEF349290B99D4B4F74950CD4843B58" KeyPath="yes" Source="$(var.AssetsPath)\textures\SkyboxSphere\02_desert_night_lf.png" />
+                    </Component>
+                    <Component Id="cmp0DD4428271E84AB7C7A591C27B8B656D" Guid="*">
+                        <File Id="fil212BCB92BAA39F556B2FED226BD8A6C7" KeyPath="yes" Source="$(var.AssetsPath)\textures\SkyboxSphere\03_desert_night_up.png" />
+                    </Component>
+                    <Component Id="cmp5FA8488C3E0989EF6108BD1AC5AD6E2E" Guid="*">
+                        <File Id="fil9C9D2DDDE113E7913F524658A9815921" KeyPath="yes" Source="$(var.AssetsPath)\textures\SkyboxSphere\04_desert_night_dn.png" />
+                    </Component>
+                    <Component Id="cmp45A8A973366D6D5418D6DEF591627980" Guid="*">
+                        <File Id="fil192C020FDC42A52B647D30B01D930FE9" KeyPath="yes" Source="$(var.AssetsPath)\textures\SkyboxSphere\05_desert_night_ft.png" />
+                    </Component>
+                    <Component Id="cmp3A556B086C4EFBC2CA4B6214E3535689" Guid="*">
+                        <File Id="fil94F34ED3EBA8F6087F15D4E0FA592C7E" KeyPath="yes" Source="$(var.AssetsPath)\textures\SkyboxSphere\06_desert_night_bk.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir1F536B9F3CC4566FEC146405D5043F40" Name="Turret01">
+                    <Component Id="cmpDF1A3BE04CC036128F6728DC576FE48E" Guid="*">
+                        <File Id="fil97BA0ED0737D5B55B6ED3D0DD45FB627" KeyPath="yes" Source="$(var.AssetsPath)\textures\Turret01\10471_Laser_Turret_v1_Diffuse.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirEBF1649EDBA3FA88ED6942386487DEBC" Name="window">
+                    <Component Id="cmp23BA51D4D22B7D66C55166AA4D8139E1" Guid="*">
+                        <File Id="fil7A2807E561D9EC52F99CCBA622456D1A" KeyPath="yes" Source="$(var.AssetsPath)\textures\window\window.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir64DE2A632370B1E4157BC41297957BB7" Name="window_ratio5to1">
+                    <Component Id="cmpB29CD85FA575098947D90E95255AE1EC" Guid="*">
+                        <File Id="fil8775150CD04EAA8E4FB4C70CAB2B54E6" KeyPath="yes" Source="$(var.AssetsPath)\textures\window_ratio5to1\Window_ratio5To1.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirDB3E79D4410CEFDADC277153328151E3" Name="wtw">
+                    <Component Id="cmpE2773A7768D73DB6EFFB54E3730D7E18" Guid="*">
+                        <File Id="filFF46E3A926EAF1C653E4287AFC926F52" KeyPath="yes" Source="$(var.AssetsPath)\textures\wtw\unnamed.png" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="AssetsHeatGenerated">
+            <ComponentRef Id="cmp307DE1779A6BA29B538C23B9C14F783C" />
+            <ComponentRef Id="cmpB6922BCB03D6ED9811075FB08FEFE4E4" />
+            <ComponentRef Id="cmpDB9F9932D299A5FAC022998E10AFD4D0" />
+            <ComponentRef Id="cmp52F32FAB7122B6DF1F85CE3536B80FAC" />
+            <ComponentRef Id="cmp88C05DD4E519F3D9273232DBFFFA3DA3" />
+            <ComponentRef Id="cmp7169627A44D7699D09BFB68A7751963C" />
+            <ComponentRef Id="cmp53E091DBF590DEC1F10E921F20CB7D3B" />
+            <ComponentRef Id="cmp5422750EAAFC764F38DD823C67502318" />
+            <ComponentRef Id="cmpA7463C10771BBC92CDB3E91C0A1E59BF" />
+            <ComponentRef Id="cmpA425486C7A3559D636934E856DC376F5" />
+            <ComponentRef Id="cmp9522BE0A84CC43A6C160A992FE973E14" />
+            <ComponentRef Id="cmp5DAAF58D2BA01BF9E0D85DCF3EC704FB" />
+            <ComponentRef Id="cmp20D9781B3D51DBD864B013B26AE2D4DD" />
+            <ComponentRef Id="cmpD94518EDD55E6D393C7F22E6022894BD" />
+            <ComponentRef Id="cmpB0995AB91D821D1418859BDBC0FFABEC" />
+            <ComponentRef Id="cmpF3279579977A60B7FECD7A2143D38C15" />
+            <ComponentRef Id="cmp7F72CC5F34DA6CCBC9D99BA55DCE5960" />
+            <ComponentRef Id="cmp814280EA933DC5CD723FC081B55355CE" />
+            <ComponentRef Id="cmp4E6AEA620F28AE1BE09BF640C5D2F13E" />
+            <ComponentRef Id="cmp51D8AC4FA04E681EEB34751D15196D9C" />
+            <ComponentRef Id="cmpA7276669A6F428761FFA44190DAAB9C9" />
+            <ComponentRef Id="cmp952814339557B9C3AD79FCCCB5DA101E" />
+            <ComponentRef Id="cmpE0E1050E9DD26876F361EA4D3CCD279F" />
+            <ComponentRef Id="cmp756895652E09211B1E62A8E7C967EF56" />
+            <ComponentRef Id="cmpCD3B4F55C50BC2CB230EAE813D5A8DD8" />
+            <ComponentRef Id="cmp39717DC6F72C6500A61505C2C450D586" />
+            <ComponentRef Id="cmp1C1E7FF8DA4A8EDDBF9085E74FB5944F" />
+            <ComponentRef Id="cmp60DC9BFA686BCE95DB64E92A5F30C9BE" />
+            <ComponentRef Id="cmp4B4F32B00592097F6AF3E243FA37BBC2" />
+            <ComponentRef Id="cmpDA2F0A860CE0646E6AD0C0A037BC67AD" />
+            <ComponentRef Id="cmpE755ACC7F5CBB869047777205BFEF896" />
+            <ComponentRef Id="cmp55560E55DCB373CC25BB7EF90A05B6BF" />
+            <ComponentRef Id="cmp13E1FB6377CA251B952A70E51CDCD6AC" />
+            <ComponentRef Id="cmp826E85B48D36F57875DF5A5268296D62" />
+            <ComponentRef Id="cmp9666D965FBE289F8C1BFC44A3AB83789" />
+            <ComponentRef Id="cmp808135DF6B458B3F54584EF6C4BCE96D" />
+            <ComponentRef Id="cmp8D933FADF4AA0C846777F7A5228F080A" />
+            <ComponentRef Id="cmpF71F1C4E5A2BD4DEE2DF95CE32AB6380" />
+            <ComponentRef Id="cmp8741E2C636A75E954AF6A3C0AD02ED1F" />
+            <ComponentRef Id="cmp83178F311314086C2B97731C26B7026F" />
+            <ComponentRef Id="cmp01AFE3687EE30EB6A92D39F02029A508" />
+            <ComponentRef Id="cmpC9202A7971B3D824878B3FB2D58D65D4" />
+            <ComponentRef Id="cmpF22001943A0B0473DFE1A1F08A3A1EDB" />
+            <ComponentRef Id="cmpE77366D62BC998F0DD368A2415613119" />
+            <ComponentRef Id="cmp6177B380028F3D231BFD9EA95A37E679" />
+            <ComponentRef Id="cmp1D197A227400FC77AE34BEACE590EFBF" />
+            <ComponentRef Id="cmpEBA75D3D49D7290AD7FBD2D18DA7DBFC" />
+            <ComponentRef Id="cmp7882219AB076261F03BBE69AFA9136BB" />
+            <ComponentRef Id="cmp5D50FF2778777820CD34E6E5332E526D" />
+            <ComponentRef Id="cmp3B342BBFF0941BB136576A684FE79062" />
+            <ComponentRef Id="cmpC207C4E789726597B97DFA045E8B11C3" />
+            <ComponentRef Id="cmp17274F9700852438070C699DBA3C576E" />
+            <ComponentRef Id="cmpDDE103ADDC91312CFF94B6AA25EE5B96" />
+            <ComponentRef Id="cmp73AD919CD78BFD67B388028A7D447F7E" />
+            <ComponentRef Id="cmpF8144A8A8064B910091E655D7F28A59A" />
+            <ComponentRef Id="cmp42D60B1D8A9811ED14790FD68551E7EB" />
+            <ComponentRef Id="cmp57F03D22015185880FCBE6CE56507A20" />
+            <ComponentRef Id="cmp9FDF8598BB2F21710EF94D73435CF5F5" />
+            <ComponentRef Id="cmpD60891344E740EC582BFEF0F73A6E7E9" />
+            <ComponentRef Id="cmp0619F3F551B8F96A22E288CDBA22ED44" />
+            <ComponentRef Id="cmpC1B4A36ABACBDB5854AC38B524B52427" />
+            <ComponentRef Id="cmp630D1ADDD6F41E07A2EF34C0979B574C" />
+            <ComponentRef Id="cmp13D9A27F4C8FB2283F068BE06D625246" />
+            <ComponentRef Id="cmpAA5EBADE4A97EF6F32027F4D5063A32C" />
+            <ComponentRef Id="cmp68191FF237349586135A8DBB812FE0DB" />
+            <ComponentRef Id="cmp4DC9959BF8E80E745C35490DFEF7431A" />
+            <ComponentRef Id="cmp20E735F1C084C23A86A1F5B36C98A27D" />
+            <ComponentRef Id="cmpAE95A9B3F3869B3DCEBB34AEDDB544A1" />
+            <ComponentRef Id="cmp3D49111343CE7E4FF0167A7BD05FDEF3" />
+            <ComponentRef Id="cmp7F7FDA82126ECA704CE4215CF1D3BA61" />
+            <ComponentRef Id="cmp058D71AE85620C9DDC12FD7395F64DE3" />
+            <ComponentRef Id="cmp506B6EDDE4786AB88C0C1B0618DA3A41" />
+            <ComponentRef Id="cmp437901C58D7482B220CE374A712F7055" />
+            <ComponentRef Id="cmp43428C45F3BCA2972788218CEB141785" />
+            <ComponentRef Id="cmpDB3978A08E4F59D0AACFD3425F767589" />
+            <ComponentRef Id="cmpD925D43643F3AB221DB3BD23A14B98FB" />
+            <ComponentRef Id="cmp1A7E61D94999A0E34DDF5AB76CB2E08C" />
+            <ComponentRef Id="cmp044AF4FE70168423E7583E241244BFBD" />
+            <ComponentRef Id="cmp03C261ABDFB0C4CD84DEC7B19BF86E76" />
+            <ComponentRef Id="cmp1949CF448597E596D5F45A908A4BB592" />
+            <ComponentRef Id="cmpDC39FAC2442C5A027DA1E76D6DD327DA" />
+            <ComponentRef Id="cmpB39EAAD15F8D3C551AF5C7F2803E1715" />
+            <ComponentRef Id="cmpCDABD9FA71F51A2E5D27A640F875BFC2" />
+            <ComponentRef Id="cmpDFF8C99A24CB524E17787754C6BE9BCF" />
+            <ComponentRef Id="cmpF459C281718552A97A62C37EC29D76AE" />
+            <ComponentRef Id="cmpD0D6A8701597BCB0904BD86A5563EB61" />
+            <ComponentRef Id="cmp5FFB0E66140F8F25B123D092E3CDD8E6" />
+            <ComponentRef Id="cmpA4390F43963D26F1BB2CA060353A550B" />
+            <ComponentRef Id="cmp558AF9489A48492954B2B3870A37E10B" />
+            <ComponentRef Id="cmp07090EE8AC75F66C3B7FB427BF11174E" />
+            <ComponentRef Id="cmp948D4F9B2E845367BB15CDF0B2DBD24D" />
+            <ComponentRef Id="cmp8EBBFBC31D736789FFC83703828C0576" />
+            <ComponentRef Id="cmp8A9190E14AC0AC6AB4A7ED26CB04CB16" />
+            <ComponentRef Id="cmp7DB1190FF23A1CE96384E7209AA11799" />
+            <ComponentRef Id="cmp0CF659A2523942A48E2CCF8B29B7BFE7" />
+            <ComponentRef Id="cmp54120BCF01B09A5139CA076C2CC9A15F" />
+            <ComponentRef Id="cmp3E807D81F08B566A295140164B5929CF" />
+            <ComponentRef Id="cmp54547A0AFE28805A3353FFD905B2467C" />
+            <ComponentRef Id="cmp10925ACD40165018E072E34F15091F60" />
+            <ComponentRef Id="cmpDB8F3D7EA78A1228165EDBED66DBDB07" />
+            <ComponentRef Id="cmpA9F71213F37637072D3674AAABFDFB52" />
+            <ComponentRef Id="cmp6A0D3D060E86C02307AD56060AE3AD20" />
+            <ComponentRef Id="cmp67364ED4DBA357DA0DEEFD20ADF4CF74" />
+            <ComponentRef Id="cmp0DD4428271E84AB7C7A591C27B8B656D" />
+            <ComponentRef Id="cmp5FA8488C3E0989EF6108BD1AC5AD6E2E" />
+            <ComponentRef Id="cmp45A8A973366D6D5418D6DEF591627980" />
+            <ComponentRef Id="cmp3A556B086C4EFBC2CA4B6214E3535689" />
+            <ComponentRef Id="cmpDF1A3BE04CC036128F6728DC576FE48E" />
+            <ComponentRef Id="cmp23BA51D4D22B7D66C55166AA4D8139E1" />
+            <ComponentRef Id="cmpB29CD85FA575098947D90E95255AE1EC" />
+            <ComponentRef Id="cmpE2773A7768D73DB6EFFB54E3730D7E18" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

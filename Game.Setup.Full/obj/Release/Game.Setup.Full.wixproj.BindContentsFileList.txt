@@ -1,0 +1,4 @@
+C:\Programming\Online\GitHub\BellEngine\Game.Setup.Full\Resources\WixBackground.png
+C:\Programming\Online\GitHub\BellEngine\bin\Release\Game.Setup.msi
+C:\Programming\Online\GitHub\BellEngine\External\Runtime\oalinst.exe
+C:\Programming\Online\GitHub\BellEngine\External\Runtime\VC_redist.x64.exe

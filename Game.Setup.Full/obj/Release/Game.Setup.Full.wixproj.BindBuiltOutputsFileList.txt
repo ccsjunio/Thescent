@@ -1,0 +1,2 @@
+C:\Programming\Online\GitHub\BellEngine\bin\Release\Game.Setup.Full.exe
+C:\Programming\Online\GitHub\BellEngine\bin\Release\Game.Setup.Full.wixpdb

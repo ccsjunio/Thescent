@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+	<Bundle Name="Thescent" Version="1.0.0.0" Manufacturer="Felipe Bellini" UpgradeCode="8bb75f6e-2214-432c-bbe5-ddb8c8c33f8d" DisableRemove="yes" DisableModify="yes">
+
+    <WixVariable Id="WixStdbaThemeXml" Value="Resources\ThescentTheme.xml" />
+    <WixVariable Id="WixStdbaThemeWxl" Value="Resources\ThescentTheme.wxl" />
+
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <Payload SourceFile="$(var.ProjectDir)\Resources\WixBackground.png" />
+      <bal:WixStandardBootstrapperApplication LicenseFile="$(var.SolutionDir)\Documentation\EULA.rtf" />
+    </BootstrapperApplicationRef>
+    
+    <Chain>
+      <MsiPackage
+        Name="Game_Setup" SourceFile="$(var.TargetDir)\Game.Setup.msi" Visible ="yes" >
+      </MsiPackage>
+      <ExePackage
+         Name="OpenAL" SourceFile="$(var.SolutionDir)\External\Runtime\oalinst.exe" 
+         InstallCommand="/SILENT"
+         Vital="yes"
+         Compressed="yes"
+         Permanent ="yes">
+      </ExePackage >
+      <?if $(var.Platform) = WIN32 ?>
+        <ExePackage
+          Name="VCRT" SourceFile="$(var.SolutionDir)\External\Runtime\VC_redist.x86.exe"
+          Compressed="yes"
+          InstallCommand="/Q"
+          Vital="yes"
+          Permanent ="yes">
+        </ExePackage >
+      <?else ?>
+        <ExePackage
+          Name="VCRT" SourceFile="$(var.SolutionDir)\External\Runtime\VC_redist.x64.exe"
+          Compressed="yes"
+          InstallCommand="/Q"
+          Vital="yes"
+          Permanent ="yes">
+        </ExePackage >
+      <?endif ?>    
+  </Chain>
+	</Bundle>
+</Wix>

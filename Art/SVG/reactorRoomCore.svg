@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   width="918.40002"
+   height="917.33331"
+   viewBox="0 0 918.40002 917.33331"
+   sodipodi:docname="reactorRoomCore.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="C:\Programming\Online\GitHub\BellEngine\Game\assets\textures\SVG\reactor2.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1302"
+       x="-0.2388"
+       width="1.4776"
+       y="-0.2388"
+       height="1.4776">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="19.587286"
+         id="feGaussianBlur1304" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2014"
+       x="-0.0972"
+       width="1.1944"
+       y="-0.0972"
+       height="1.1944">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.9671987"
+         id="feGaussianBlur2016" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1491"
+       x="-0.2412"
+       width="1.4824"
+       y="-0.2412"
+       height="1.4824">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="12.326012"
+         id="feGaussianBlur1493" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.72766223"
+     inkscape:cx="183.32044"
+     inkscape:cy="520.00662"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <circle
+     style="opacity:1;fill:#313236;fill-opacity:1;stroke:none;stroke-width:3.67296171;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter1302)"
+     id="path866-6"
+     cx="459.20001"
+     cy="458.66666"
+     r="98.428574"
+     transform="matrix(2.5029395,0,0,2.5029395,-690.14982,-689.34823)" />
+  <circle
+     style="opacity:1;fill:#b0efff;fill-opacity:1;stroke:#b3b3b3;stroke-width:2.28834629;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter1491)"
+     id="path866-1"
+     cx="459.20001"
+     cy="458.66666"
+     r="61.323441"
+     transform="matrix(1.9485865,0,0,1.9485865,-435.59091,-435.08497)" />
+  <circle
+     style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#b3b3b3;stroke-width:2.28834629;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter2014)"
+     id="path866"
+     cx="459.20001"
+     cy="458.66666"
+     r="61.323441"
+     transform="matrix(1.6671469,0,0,1.6671469,-306.35388,-305.99805)" />
+</svg>

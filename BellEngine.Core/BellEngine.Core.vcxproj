@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{E1C950FC-98B4-48E0-890A-BFF46C11B6A8}</ProjectGuid>
+    <RootNamespace>BellEngine.Core</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)External\include;$(SolutionDir)External\include\OpenAL;$(SolutionDir)External\include\Dirent;$(SolutionDir)BellEngine.Interfaces\include;$(SolutionDir)BellEngine.Utilities\include;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration);$(ProjectDir)lib;$(OutDir);$(LibraryPath);$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\EFX-Util_MT</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)External\include;$(SolutionDir)External\include\OpenAL;$(SolutionDir)External\include\Dirent;$(SolutionDir)BellEngine.Interfaces\include;$(SolutionDir)BellEngine.Utilities\include;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration);$(ProjectDir)lib;$(OutDir);$(LibraryPath);$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\EFX-Util_MT</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)External\include;$(SolutionDir)External\include\OpenAL;$(SolutionDir)External\include\Dirent;$(SolutionDir)BellEngine.Interfaces\include;$(SolutionDir)BellEngine.Utilities\include;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration);$(ProjectDir)lib;$(OutDir);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\EFX-Util_MT</LibraryPath>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)External\include;$(SolutionDir)External\include\OpenAL;$(SolutionDir)External\include\Dirent;$(SolutionDir)BellEngine.Interfaces\include;$(SolutionDir)BellEngine.Utilities\include;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration);$(ProjectDir)lib;$(OutDir);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\EFX-Util_MT</LibraryPath>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)BellEngine.Common\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(ProjectDir)lib\$(Platform)\$(Configuration)\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\lua5.3.5.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Interfaces.lib;SOIL.lib;Opengl32.lib;assimp-vc142-mtd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\;$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)BellEngine.Common\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(ProjectDir)lib\$(Platform)\$(Configuration)\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\lua5.3.5.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Interfaces.lib;SOIL.lib;Opengl32.lib;assimp-vc142-mtd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\;$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)BellEngine.Common\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(ProjectDir)lib\$(Platform)\$(Configuration)\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\lua5.3.5.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Interfaces.lib;SOIL.lib;Opengl32.lib;assimp-vc142-mt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\;$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)BellEngine.Common\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(ProjectDir)lib\$(Platform)\$(Configuration)\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\lua5.3.5.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Interfaces.lib;SOIL.lib;Opengl32.lib;assimp-vc142-mt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)External\lib\$(PlatformTarget)\$(Configuration)\;$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\External\include\imgui\imconfig.h" />
+    <ClInclude Include="..\External\include\imgui\imgui.h" />
+    <ClInclude Include="..\External\include\imgui\imGuIZMOquat.h" />
+    <ClInclude Include="..\External\include\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="..\External\include\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\External\include\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="..\External\include\imgui\imgui_internal.h" />
+    <ClInclude Include="..\External\include\imgui\imgui_stdlib.h" />
+    <ClInclude Include="..\External\include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\External\include\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\External\include\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\External\include\imgui\vgConfig.h" />
+    <ClInclude Include="..\External\include\imgui\vGizmo.h" />
+    <ClInclude Include="..\External\include\imgui\vGizmoMath.h" />
+    <ClInclude Include="..\External\include\imgui\vgMath.h" />
+    <ClInclude Include="DebugRenderer\cDebugRenderer.h" />
+    <ClInclude Include="DebugRenderer\cDebugRenderer_built_in_shaders.h" />
+    <ClInclude Include="DebugRenderer\CErrorLog.h" />
+    <ClInclude Include="DebugRenderer\cGLRenderStateHelper.h" />
+    <ClInclude Include="DebugRenderer\COpenGLError.h" />
+    <ClInclude Include="DebugRenderer\iDebugRenderer.h" />
+    <ClInclude Include="include\IdentityComponent.h" />
+    <ClInclude Include="include\Cloth.h" />
+    <ClInclude Include="include\GraphicsBufferFactory.h" />
+    <ClInclude Include="include\FBO.h" />
+    <ClInclude Include="include\2DDraw.h" />
+    <ClInclude Include="include\Animation.h" />
+    <ClInclude Include="include\BaseKeyBindings.h" />
+    <ClInclude Include="include\CameraFree.h" />
+    <ClInclude Include="include\CameraLockedAt.h" />
+    <ClInclude Include="include\CollisionInfo.h" />
+    <ClInclude Include="include\Curve.h" />
+    <ClInclude Include="include\DebugRenderer.h" />
+    <ClInclude Include="include\Easing.h" />
+    <ClInclude Include="include\ErrorLog.h" />
+    <ClInclude Include="include\GLRenderStateHelper.h" />
+    <ClInclude Include="include\Helpers.h" />
+    <ClInclude Include="include\iDebugRenderer.h" />
+    <ClInclude Include="include\LightDirectional.h" />
+    <ClInclude Include="include\LightPoint.h" />
+    <ClInclude Include="include\LightSpot.h" />
+    <ClInclude Include="include\ShaderProgramFactory.h" />
+    <ClInclude Include="include\SystemAnimationLua.h" />
+    <ClInclude Include="include\OpenGLError.h" />
+    <ClInclude Include="include\Script.h" />
+    <ClInclude Include="include\EngineFolders.h" />
+    <ClInclude Include="include\ErrorCodes.h" />
+    <ClInclude Include="include\SystemVideo.h" />
+    <ClInclude Include="include\ICommunicable.h" />
+    <ClInclude Include="include\IMessageDeliverer.h" />
+    <ClInclude Include="include\IMessageListener.h" />
+    <ClInclude Include="include\ISingleton.h" />
+    <ClInclude Include="include\Level.h" />
+    <ClInclude Include="include\Message.h" />
+    <ClInclude Include="include\ObjectGroup.h" />
+    <ClInclude Include="include\PhysicsManager.h" />
+    <ClInclude Include="include\ProgrammingDef.h" />
+    <ClInclude Include="include\Shader.h" />
+    <ClInclude Include="include\ShaderCompiler.h" />
+    <ClInclude Include="include\ShaderProgram.h" />
+    <ClInclude Include="include\TextureHeightMap.h" />
+    <ClInclude Include="include\Texture2D.h" />
+    <ClInclude Include="include\Transform.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\StencilBuffer.h" />
+    <ClInclude Include="include\TextureManager.h" />
+    <ClInclude Include="include\TextureSkybox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BellEngine.Core.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\External\include\imgui\imgui.cpp" />
+    <ClCompile Include="..\External\include\imgui\imGuIZMOquat.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="..\External\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\IdentityComponent.cpp" />
+    <ClCompile Include="src\Cloth.cpp" />
+    <ClCompile Include="src\GraphicsBufferFactory.cpp" />
+    <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\BaseKeyBindings.cpp" />
+    <ClCompile Include="src\CameraFree.cpp" />
+    <ClCompile Include="src\CameraLockedAt.cpp" />
+    <ClCompile Include="src\Curve.cpp" />
+    <ClCompile Include="src\DebugRenderer.cpp" />
+    <ClCompile Include="DebugRenderer\cDebugRenderer.cpp" />
+    <ClCompile Include="DebugRenderer\cDebugRenderer_BuiltInShapes.cpp" />
+    <ClCompile Include="DebugRenderer\CErrorLog.cpp" />
+    <ClCompile Include="DebugRenderer\cGLRenderStateHelper.cpp" />
+    <ClCompile Include="DebugRenderer\COpenGLError.cpp" />
+    <ClCompile Include="src\DebugRenderer_BuiltInShapes.cpp" />
+    <ClCompile Include="src\Easing.cpp" />
+    <ClCompile Include="src\EngineFolders.cpp" />
+    <ClCompile Include="src\ErrorLog.cpp" />
+    <ClCompile Include="src\FBO.cpp" />
+    <ClCompile Include="src\GLRenderStateHelper.cpp" />
+    <ClCompile Include="src\ShaderProgramFactory.cpp" />
+    <ClCompile Include="src\SystemVideo.cpp" />
+    <ClCompile Include="src\Level.cpp" />
+    <ClCompile Include="src\LightDirectional.cpp" />
+    <ClCompile Include="src\LightPoint.cpp" />
+    <ClCompile Include="src\LightSpot.cpp" />
+    <ClCompile Include="src\SystemAnimationLua.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Message.cpp" />
+    <ClCompile Include="src\OpenGLError.cpp" />
+    <ClCompile Include="src\PhysicsManager.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\ShaderCompiler.cpp" />
+    <ClCompile Include="src\ShaderProgram.cpp" />
+    <ClCompile Include="src\TextureHeightMap.cpp" />
+    <ClCompile Include="src\Texture2D.cpp" />
+    <ClCompile Include="src\StencilBuffer.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="src\TextureSkybox.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

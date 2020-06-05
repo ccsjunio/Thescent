@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShaderContainer Type="GLShaderContainer">	
+	<!-- Available programs, which are really shader combinations -->
+	<ShaderPrograms>
+		<Program>
+			<Parameters>
+				<Name Type="string">ShaderProgram01</Name>
+				<ShaderCount Type="unsigned int">2</ShaderCount>
+				<Shader0Path Type="string">VertexShader.glsl</Shader0Path>
+				<Shader0Type Type="unsigned long long">1</Shader0Type>		
+				<Shader1Path Type="string">FragmentShader.glsl</Shader1Path>
+				<Shader1Type Type="unsigned long long">2</Shader1Type>
+				<AvailableFeatures Type="string">BASIC_VERTEX_DRAW SKINNEDMESH COLORIZE INTERPOLATION_COLORIZE TEXTURIZE TEXTURIZE_SKYBOX DISCARD_BY_HEIGHT TEXTURIZE_BY_HEIGHT IMPOSTER REFLECTREFRACT USE_HEIGHTMAP</AvailableFeatures>
+				<AvailableFBOPasses Type="string">ALL</AvailableFBOPasses>
+			</Parameters>
+		</Program>
+		<Program>
+			<Parameters>
+				<Name Type="string">ImposterInstanced</Name>
+				<ShaderCount Type="unsigned int">2</ShaderCount>
+				<Shader0Path Type="string">VertexInstanceRendering.glsl</Shader0Path>
+				<Shader0Type Type="unsigned long long">1</Shader0Type>		
+				<Shader1Path Type="string">FragmentShaderImposter.glsl</Shader1Path>
+				<Shader1Type Type="unsigned long long">2</Shader1Type>
+				<AvailableFeatures Type="string">INSTANCED_DRAW IMPOSTER</AvailableFeatures>
+				<AvailableFBOPasses Type="string">ALL</AvailableFBOPasses>
+			</Parameters>
+		</Program>
+	</ShaderPrograms>
+</ShaderContainer>
+

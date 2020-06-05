@@ -1,0 +1,6 @@
+C:\Programming\Online\GitHub\BellEngine\bin\Release\Game.Setup.Full.exe
+C:\Programming\Online\GitHub\BellEngine\bin\Release\Game.Setup.Full.wixpdb
+obj\Release\Bundle.wixobj
+obj\Release\Game.Setup.Full.wixproj.BindContentsFileList.txt
+obj\Release\Game.Setup.Full.wixproj.BindOutputsFileList.txt
+obj\Release\Game.Setup.Full.wixproj.BindBuiltOutputsFileList.txt

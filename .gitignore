@@ -2,4 +2,38 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/bin
+/.vs/BellEngine/v16
 /.vs
+/Game/imgui.ini
+/Game/save
+/Game/������������������������������������������
+/~WRL1608.tmp
+/Game/assets/config/Temp
+/~$nswers.docx
+/~$Architecture.pptx
+/Game/assets/config/ai
+/~WRL3463.tmp
+/Game/assets/config/aiPproj2
+/Game/assets/models/C2
+/Game/assets/models/Not in place
+/~WRL0001.tmp
+/~$nswers.doc
+/Game/assets/config/anim
+/~$Anwers.doc
+/~WRL0003.tmp
+/Game/assets/models/New folder
+/Game/assets/models/New folder (2)
+/Game/assets/models/Robot 2
+/Game/assets/models/peanut
+/Game/assets/models/peanut inverted
+/Game/assets/models/peanut inverted - Copy
+/Game/GLShader
+/~$-Descent.docx
+/~$ntrols.docx
+/~$Scope.docx
+/Documentation/~WRL0005.tmp
+/Documentation/~$escent.docx
+/Game.Setup/obj/Release
+/Documentation/~$ntrols.docx
+/Documentation/~$Architecture.pptx

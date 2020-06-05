@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{AD3F6A98-BA73-4FE0-83F6-33EFFDD1B619}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BellEngineInterfaces</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)External\include\;$(SolutionDir)BellEngine.Utilities\include\;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)External\include\;$(SolutionDir)BellEngine.Utilities\include\;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)External\include\;$(SolutionDir)BellEngine.Utilities\include\;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(PlatformTarget)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)External\include\;$(SolutionDir)BellEngine.Utilities\include\;$(SolutionDir)BellEngine.GL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Solutiondir)BellEngine.Common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Utilities.lib;</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Solutiondir)BellEngine.Common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Utilities.lib;</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Solutiondir)BellEngine.Common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Utilities.lib;</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Solutiondir)BellEngine.Common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>BellEngine.GL.lib;BellEngine.Utilities.lib;</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\IFileReader.h" />
+    <ClInclude Include="include\IGLFragmentShader.h" />
+    <ClInclude Include="include\IGLGeometryShader.h" />
+    <ClInclude Include="include\IGLShader.h" />
+    <ClInclude Include="include\IGLVertexShader.h" />
+    <ClInclude Include="include\Entity.h" />
+    <ClInclude Include="include\ICloth.h" />
+    <ClInclude Include="include\IClothRenderComponent.h" />
+    <ClInclude Include="include\IIdentityComponent.h" />
+    <ClInclude Include="include\IParticleEmitter.h" />
+    <ClInclude Include="include\IParticleMeshComponent.h" />
+    <ClInclude Include="include\IPhysicsComponent.h" />
+    <ClInclude Include="include\IRender.h" />
+    <ClInclude Include="include\IShaderContainer.h" />
+    <ClInclude Include="include\ISkinnedMesh.h" />
+    <ClInclude Include="include\ISoftbody.h" />
+    <ClInclude Include="include\ISoundComponent.h" />
+    <ClInclude Include="include\ISystemDataPersistency.h" />
+    <ClInclude Include="include\IUpdatable.h" />
+    <ClInclude Include="include\ModelDef.h" />
+    <ClInclude Include="include\ScriptedAnimation.h" />
+    <ClInclude Include="include\FrameTime.h" />
+    <ClInclude Include="include\framework.h" />
+    <ClInclude Include="include\I3DObject.h" />
+    <ClInclude Include="include\IAIBehavior.h" />
+    <ClInclude Include="include\ICamera.h" />
+    <ClInclude Include="include\ICloneable.h" />
+    <ClInclude Include="include\ICollidable.h" />
+    <ClInclude Include="include\ICollider.h" />
+    <ClInclude Include="include\IColorable.h" />
+    <ClInclude Include="include\IComponent.h" />
+    <ClInclude Include="include\IDisposable.h" />
+    <ClInclude Include="include\IExtendedInfo.h" />
+    <ClInclude Include="include\IFactory.h" />
+    <ClInclude Include="include\IGraphicsBuffer.h" />
+    <ClInclude Include="include\IIdentifiable.h" />
+    <ClInclude Include="include\ILight.h" />
+    <ClInclude Include="include\IMesh.h" />
+    <ClInclude Include="include\IRenderable.h" />
+    <ClInclude Include="include\IRigidbody.h" />
+    <ClInclude Include="include\IScript.h" />
+    <ClInclude Include="include\IScriptedAnimation.h" />
+    <ClInclude Include="include\ISelectable.h" />
+    <ClInclude Include="include\IShaderProgram.h" />
+    <ClInclude Include="include\ISound.h" />
+    <ClInclude Include="include\ISystem.h" />
+    <ClInclude Include="include\ISystemAI.h" />
+    <ClInclude Include="include\ISystemGUI.h" />
+    <ClInclude Include="include\ISystemMesh.h" />
+    <ClInclude Include="include\ISystemPhysics.h" />
+    <ClInclude Include="include\ISystemScripting.h" />
+    <ClInclude Include="include\ISystemSound.h" />
+    <ClInclude Include="include\ISystemUserControl.h" />
+    <ClInclude Include="include\ISystemVideo.h" />
+    <ClInclude Include="include\ITexture.h" />
+    <ClInclude Include="include\ITransform.h" />
+    <ClInclude Include="include\ITransformable.h" />
+    <ClInclude Include="include\IWorld.h" />
+    <ClInclude Include="include\Parameter.h" />
+    <ClInclude Include="include\ParameterContainer.h" />
+    <ClInclude Include="include\pch.h" />
+    <ClInclude Include="include\Scene.h" />
+    <ClInclude Include="include\Script.h" />
+    <ClInclude Include="include\ShaderFeature.h" />
+    <ClInclude Include="include\Triangle3D.h" />
+    <ClInclude Include="include\Vertex3D.h" />
+    <ClInclude Include="include\IShader.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="include\IEntity.h" />
+    <ClCompile Include="include\IMeshComponent.h" />
+    <ClCompile Include="src\BellEngine.Interfaces.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\Script.cpp" />
+    <ClCompile Include="src\ShaderFeature.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BellEngine.Interfaces.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
