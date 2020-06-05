@@ -15,10 +15,10 @@ Developer: Felipe Da Silva Bellini
 
 # B - HOW TO BUILD AND RUN:
 
-1.	Get the source code from [FOL](https://www.fanshaweonline.ca/d2l/home/996074)
+1.	Clone the source code from this page.
 2.	Run BellEngine.sln, this solution was created with VS2019 and VC++ 142.
 3.	Rebuild the solution.
-	This should work for all combinations of configuration (Debug/Release) and platform (x86/x64).
+	This should work for all combinations of configuration (Debug/Release) and platform (x86/x64). Release/x64 preferably.
 4.	Run Game to load the simulation.
 5. 	Read the documentation files, for the paper on Thescent $(SolutionDir)Documentation\Thescent.pdf, for controls $(SolutionDir)Documentation\Controls.docx and for architecture $(SolutionDir)Documentation\Architecture.pptx.
 6.	Check the assets folder for dynamic loaded data.
@@ -26,11 +26,7 @@ Developer: Felipe Da Silva Bellini
 	file that holds control bindings and video properties. A description of the shader programs used is at assets/config/shader_programs.xml
 	Level.xml is the only file needed for changing the content that will be loaded into the game.
 
-# C - SCOPE
-
-The scope of this project can be read $(SolutionDir)Scope.docx as written by Michael Feeney.
-
-# D - PROJECTS:
+# C - PROJECTS:
 
 1.	BellEngine.GL:
 	Provides access to OpenGL, GLAD, GLFW, etc.
@@ -68,4 +64,4 @@ The scope of this project can be read $(SolutionDir)Scope.docx as written by Mic
 	This project produces a WiX EXE bundle installer package for the MSI and the runtimes of Visual C++ 2019 and OpenAL.
 
 # License
-Licensed under MIT License
+Licensed under AGPL-3.0 License
