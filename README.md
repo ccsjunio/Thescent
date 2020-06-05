@@ -26,7 +26,8 @@ Developer: Felipe Da Silva Bellini
 # B - HOW TO BUILD AND RUN:
 
 1.	Clone the source code from this page.
-2.	Run BellEngine.sln, this solution was created with VS2019 and VC++ 142.
+2.	Run BellEngine.sln, this solution was created with VS2019 and VC++ 142. If you have MSBUILD in your system path, another option is to run $(SolutionDir)BUILD_RELEASE_x64.bat. 
+	Binaries will be dropped at $(SolutionDir)\bin.
 3.	Rebuild the solution.
 	This should work for all combinations of configuration (Debug/Release) and platform (x86/x64). Release/x64 preferably.
 4.	Run Game to load the simulation.
