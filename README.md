@@ -3,7 +3,15 @@
 Thescent is an OpenGL game prototype based on Descent(1995). It was originally developed as the final project for the Game Development: Advanced Programming post-graduate at Fanshawe College.
 This illustrates a complex use case of C/C++ in a game engine (BellEngine).
 The engine also supports Lua for scripted animations and the game itself is packaged in a installer written in Wix.
-More information is available in the documentation folder. 
+More information is available in the documentation folder.
+
+This project features the following topics:
+* Multitheading
+* Object pooling
+* C++11, 14 and 17
+* ECS Game Engine
+* OpenGL 3D graphics
+* More features as provided in the documentation.
 
 Official game page: https://fe-bell.itch.io/thescent
 
