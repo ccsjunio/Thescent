@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Felipe Bellini"
             VALUE "FileDescription", "Scripting system based on Lua for BellEngine."
-            VALUE "FileVersion", "1.0.0.11"
+            VALUE "FileVersion", "1.0.0.2"
             VALUE "InternalName", "BellEngine.Scripting.Lua"
             VALUE "LegalCopyright", "Copyright (C) Felipe Bellini 2020"
             VALUE "OriginalFilename", "BellEngine.Scripting.Lua"
             VALUE "ProductName", "BellEngine.Scripting.Lua"
-            VALUE "ProductVersion", "1.0.0.11"
+            VALUE "ProductVersion", "1.0.0.2"
         END
     END
     BLOCK "VarFileInfo"

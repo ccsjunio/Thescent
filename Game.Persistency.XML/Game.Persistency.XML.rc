@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,31
- PRODUCTVERSION 1,0,0,31
+ FILEVERSION 1,0,0,32
+ PRODUCTVERSION 1,0,0,32
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Felipe Bellini"
             VALUE "FileDescription", "XML loader for the game."
-            VALUE "FileVersion", "1.0.0.31"
+            VALUE "FileVersion", "1.0.0.32"
             VALUE "InternalName", "Game.Persistency.XML"
             VALUE "LegalCopyright", "Copyright (C) Felipe Bellini 2020"
             VALUE "OriginalFilename", "Game.Persistency.XML"
             VALUE "ProductName", "Game.Persistency.XML"
-            VALUE "ProductVersion", "1.0.0.31"
+            VALUE "ProductVersion", "1.0.0.32"
         END
     END
     BLOCK "VarFileInfo"

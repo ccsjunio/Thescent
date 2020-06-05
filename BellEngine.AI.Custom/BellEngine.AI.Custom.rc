@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,22
- PRODUCTVERSION 1,0,0,22
+ FILEVERSION 1,0,0,23
+ PRODUCTVERSION 1,0,0,23
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Felipe Bellini"
             VALUE "FileDescription", "Custom AI system written for BellEngine."
-            VALUE "FileVersion", "1.0.0.22"
+            VALUE "FileVersion", "1.0.0.23"
             VALUE "InternalName", "BellEngine.AI.Custom"
             VALUE "LegalCopyright", "Copyright (C) Felipe Bellini 2020"
             VALUE "OriginalFilename", "BellEngine.AI.Custom"
             VALUE "ProductName", "BellEngine.AI.Custom"
-            VALUE "ProductVersion", "1.0.0.22"
+            VALUE "ProductVersion", "1.0.0.23"
         END
     END
     BLOCK "VarFileInfo"

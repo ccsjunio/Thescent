@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,25
- PRODUCTVERSION 1,0,0,25
+ FILEVERSION 1,0,0,26
+ PRODUCTVERSION 1,0,0,26
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Felipe Bellini"
             VALUE "FileDescription", "Utilities classes for BellEngine."
-            VALUE "FileVersion", "1.0.0.25"
+            VALUE "FileVersion", "1.0.0.26"
             VALUE "InternalName", "BellEngine.Utilities"
             VALUE "LegalCopyright", "Copyright (C) Felipe Bellini 2020"
             VALUE "OriginalFilename", "BellEngine.Utilities"
             VALUE "ProductName", "BellEngine.Utilities"
-            VALUE "ProductVersion", "1.0.0.25"
+            VALUE "ProductVersion", "1.0.0.26"
         END
     END
     BLOCK "VarFileInfo"
