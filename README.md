@@ -30,6 +30,7 @@ Although most dependencies are present in this repository, some resources must b
 * Wix Toolset 3.11+
 * Wix Toolset Visual Studio 2019 Extension
 * OpenAL (for the sounds when debbuging)
+
 More information is available in the documentation.
 
 # C - HOW TO BUILD AND RUN:
