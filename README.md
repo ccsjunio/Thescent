@@ -18,12 +18,21 @@ Official game page: https://fe-bell.itch.io/thescent
 Developer: Felipe Da Silva Bellini
 
 # A - PLAYING THE GAME:
-1.	An installer is available [here](https://fe-bell.itch.io/thescent).
+1.	The installer is available [here](https://github.com/Fe-Bell/Thescent/releases) and [here](https://fe-bell.itch.io/thescent). Current version is v1.005.
 2.	Install the game. Since the installer is not signed, some antivirus programs might block it.
 	If that is the case, just disable the antivirus and try again.
 3.	Launch Thescent from the shortcut created on your desktop.
 
-# B - HOW TO BUILD AND RUN:
+# B - BUILD REQUIREMENTS
+Although most dependencies are present in this repository, some resources must be installed in the build machine.
+* Visual Studio 2019 Community or higher
+* Visual C++ SDK 142
+* Wix Toolset 3.11+
+* Wix Toolset Visual Studio 2019 Extension
+* OpenAL (for the sounds when debbuging)
+More information is available in the documentation.
+
+# C - HOW TO BUILD AND RUN:
 
 1.	Clone the source code from this page.
 2.	Run BellEngine.sln, this solution was created with VS2019 and VC++ 142. If you have MSBUILD in your system path, another option is to run $(SolutionDir)BUILD_RELEASE_x64.bat. 
@@ -37,7 +46,7 @@ Developer: Felipe Da Silva Bellini
 	file that holds control bindings and video properties. A description of the shader programs used is at assets/config/shader_programs.xml
 	Level.xml is the only file needed for changing the content that will be loaded into the game.
 
-# C - PROJECTS:
+# D - PROJECTS:
 
 1.	BellEngine.GL:
 	Provides access to OpenGL, GLAD, GLFW, etc.
